@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerLogos — Copy Premium v1.1 (Preview com Anotações)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #5636d1;
+            --purple-light: #7c5ce7;
+            --purple-dark: #3d1fa8;
+            --gold: #f59e0b;
+            --green: #10b981;
+            --red: #ef4444;
+            --dark: #0f0f1a;
+            --dark-card: #1a1a2e;
+            --gray: #64748b;
+            --white: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        /* Header de Contexto */
+        .context-header {
+            background: linear-gradient(135deg, var(--purple-dark), var(--dark));
+            padding: 40px 24px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .context-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .context-header p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.joao { background: var(--gold); }
+        .legend-dot.estrategia { background: var(--green); }
+        .legend-dot.importante { background: var(--purple-light); }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* Secções */
+        .section {
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(86, 54, 209, 0.2);
+            border: 1px solid rgba(86, 54, 209, 0.4);
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--purple-light);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        /* Cards de Copy */
+        .copy-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .copy-card.highlight-joao {
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.1);
+        }
+
+        .copy-card.highlight-joao::before {
+            content: 'Solicitação do João';
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .copy-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .copy-text {
+            font-size: 16px;
+            color: var(--white);
+        }
+
+        .copy-text.headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .copy-text.large {
+            font-size: 18px;
+        }
+
+        /* Anotações Flutuantes */
+        .annotation {
+            position: relative;
+            margin-top: 16px;
+            padding: 16px;
+            background: rgba(16, 185, 129, 0.08);
+            border-left: 3px solid var(--green);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .annotation.joao-request {
+            background: rgba(245, 158, 11, 0.08);
+            border-left-color: var(--gold);
+        }
+
+        .annotation.importante {
+            background: rgba(124, 92, 231, 0.08);
+            border-left-color: var(--purple-light);
+        }
+
+        .annotation-icon {
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .annotation.joao-request .annotation-icon {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .annotation .annotation-icon {
+            background: var(--green);
+            color: var(--dark);
+        }
+
+        .annotation.importante .annotation-icon {
+            background: var(--purple-light);
+            color: white;
+        }
+
+        .annotation-title {
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .annotation-text {
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+
+        /* Highlight de texto */
+        .highlight-gold {
+            background: linear-gradient(120deg, rgba(245, 158, 11, 0.3) 0%, rgba(245, 158, 11, 0.1) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .highlight-green {
+            background: linear-gradient(120deg, rgba(16, 185, 129, 0.3) 0%, rgba(16, 185, 129, 0.1) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Lista de Benefícios */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 15px;
+        }
+
+        .benefits-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--purple-light);
+        }
+
+        /* Formulário Preview */
+        .form-preview {
+            background: rgba(86, 54, 209, 0.1);
+            border: 1px solid rgba(86, 54, 209, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .form-field {
+            margin-bottom: 16px;
+        }
+
+        .form-field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--gray);
+        }
+
+        .form-field input,
+        .form-field select {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 14px;
+        }
+
+        .form-field.qualification {
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 12px;
+            background: rgba(245, 158, 11, 0.05);
+        }
+
+        .form-field.qualification label {
+            color: var(--gold);
+        }
+
+        /* Botões */
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Timeline de Dor */
+        .pain-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .pain-step {
+            text-align: center;
+            padding: 20px 12px;
+            background: var(--dark);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .pain-step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .pain-step:nth-child(1) .pain-step-number,
+        .pain-step:nth-child(2) .pain-step-number {
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid var(--red);
+            color: var(--red);
+        }
+
+        .pain-step:nth-child(3) .pain-step-number {
+            background: rgba(245, 158, 11, 0.2);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .pain-step:nth-child(4) .pain-step-number {
+            background: rgba(16, 185, 129, 0.2);
+            border: 2px solid var(--green);
+            color: var(--green);
+        }
+
+        .pain-step h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .pain-step p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* Comparação */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .comparison-box {
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .comparison-box.bad {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .comparison-box.good {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .comparison-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .comparison-box.bad .comparison-label { color: var(--red); }
+        .comparison-box.good .comparison-label { color: var(--green); }
+
+        /* Metodologia */
+        .method-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .method-step {
+            text-align: center;
+            padding: 24px 16px;
+            background: var(--dark);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .method-step-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .method-step h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .method-step p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* Equipa */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 20px 12px;
+            background: var(--dark);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .team-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), var(--purple-light));
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .team-member h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .team-member p {
+            font-size: 11px;
+            color: var(--gray);
+        }
+
+        /* Contadores */
+        .counters {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .counter {
+            text-align: center;
+            padding: 20px;
+            background: var(--dark-card);
+            border-radius: 12px;
+        }
+
+        .counter-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--purple-light);
+            margin-bottom: 4px;
+        }
+
+        .counter-label {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 24px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .faq-question::before {
+            content: '+';
+            color: var(--purple-light);
+            font-size: 20px;
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 16px 0;
+        }
+
+        .badge {
+            padding: 8px 16px;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .badge.gold {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(86, 54, 209, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pain-timeline,
+            .comparison-grid,
+            .method-steps,
+            .team-grid,
+            .counters {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .legend {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pain-timeline,
+            .method-steps,
+            .team-grid,
+            .counters {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header de Contexto -->
+<header class="context-header">
+    <h1>PowerLogos — Copy Premium v1.1</h1>
+    <p>Preview com anotações estratégicas baseadas nas solicitações do João</p>
+
+    <div class="legend">
+        <div class="legend-item">
+            <span class="legend-dot joao"></span>
+            <span>Solicitação directa do João</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot estrategia"></span>
+            <span>Decisão estratégica</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot importante"></span>
+            <span>Ponto importante</span>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="section">
+        <span class="section-label">Secção 01</span>
+        <h2 class="section-title">Hero (Acima da Dobra)</h2>
+
+        <div class="copy-card">
+            <div class="copy-label">Badges de Autoridade</div>
+            <div class="badges">
+                <span class="badge">Google Partner</span>
+                <span class="badge">Meta Partner</span>
+                <span class="badge">TikTok Partner</span>
+            </div>
+        </div>
+
+        <div class="annotation importante">
+            <span class="annotation-icon">i</span>
+            <div class="annotation-title">Por que isto é importante</div>
+            <div class="annotation-text">Certificações logo no topo estabelecem credibilidade imediata. O documento de Direção Estratégica pedia que Google Partner, Meta Partner e TikTok Partner estivessem visíveis.</div>
+        </div>
+
+        <div class="copy-card highlight-joao">
+            <div class="copy-label">Headline Principal</div>
+            <div class="copy-text headline">O marketing digital da sua empresa <span class="highlight-gold">não está a gerar o retorno</span> que deveria?</div>
+        </div>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Solicitação do João atendida</div>
+            <div class="annotation-text"><strong>"Comunicação mais orientada a crescimento, ROI e aquisição de clientes"</strong> — A headline foca em "retorno" (ROI), não em redes sociais ou seguidores.</div>
+        </div>
+
+        <!-- VARIAÇÕES DE HEADLINE -->
+        <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(245, 158, 11, 0.1)); border: 2px dashed var(--gold); border-radius: 16px; padding: 24px; margin: 24px 0;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                <span style="background: var(--red); color: white; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase;">Variações para Teste A/B</span>
+            </div>
+
+            <div class="copy-card" style="border-color: var(--red); margin-bottom: 16px;">
+                <div class="copy-label" style="color: var(--red);">VARIAÇÃO A — "O Dinheiro a Arder"</div>
+                <div class="copy-text headline" style="font-size: 22px;">Quanto dinheiro a sua empresa <span style="color: var(--red);">já perdeu</span> com agências que não entregam?</div>
+                <div class="copy-text" style="color: var(--gray); margin-top: 12px; font-size: 14px;">Se já trocou de agência mais do que uma vez nos últimos 2 anos e continua sem resultados, o problema não é o seu negócio — é quem escolheu para o fazer crescer.</div>
+                <div style="margin-top: 12px; padding: 8px 12px; background: rgba(239, 68, 68, 0.1); border-radius: 6px; font-size: 12px;">
+                    <strong>Tom:</strong> Confrontacional | <strong>Filtro:</strong> Quem já trocou de agência
+                </div>
+            </div>
+
+            <div class="copy-card" style="border-color: var(--gold);">
+                <div class="copy-label" style="color: var(--gold);">VARIAÇÃO B — "A Verdade Incómoda"</div>
+                <div class="copy-text headline" style="font-size: 22px;">A sua agência actual está a ganhar dinheiro. <span style="color: var(--gold);">E o seu negócio?</span></div>
+                <div class="copy-text" style="color: var(--gray); margin-top: 12px; font-size: 14px;">Enquanto paga fees mensais, a sua agência lucra. Mas quantos clientes novos entraram pela porta este mês por causa do marketing deles?</div>
+                <div style="margin-top: 12px; padding: 8px 12px; background: rgba(245, 158, 11, 0.1); border-radius: 6px; font-size: 12px;">
+                    <strong>Tom:</strong> Provocativo | <strong>Filtro:</strong> Quem não tem métricas claras
+                </div>
+            </div>
+
+            <div class="copy-card" style="border-color: var(--green); margin-top: 16px;">
+                <div class="copy-label" style="color: var(--green);">VARIAÇÃO C — "Oportunidade + Urgência"</div>
+                <div class="copy-text headline" style="font-size: 22px;">Tenha a sua estratégia de aquisição de clientes <span style="color: var(--green);">pronta em 7 dias</span> — sem complicações, sem tentativa e erro.</div>
+                <div class="copy-text" style="color: var(--gray); margin-top: 12px; font-size: 14px;">Enquanto outras agências demoram meses a "testar", nós entregamos um plano de acção completo na primeira semana. Diagnóstico, estratégia e primeiras campanhas a rodar — tudo alinhado com os seus objectivos de faturação.</div>
+                <div class="copy-text" style="color: var(--gold); margin-top: 12px; font-size: 13px; font-weight: 600;">Apenas 3 vagas disponíveis este mês para novos projectos estratégicos.</div>
+                <div style="margin-top: 12px; padding: 8px 12px; background: rgba(16, 185, 129, 0.1); border-radius: 6px; font-size: 12px;">
+                    <strong>Tom:</strong> Oportunidade | <strong>Gatilhos:</strong> Prazo específico (7 dias) + Escassez (3 vagas) + Facilidade
+                </div>
+            </div>
+
+            <div class="annotation" style="margin-top: 16px; background: rgba(16, 185, 129, 0.08);">
+                <span class="annotation-icon" style="background: var(--green);">✓</span>
+                <div class="annotation-title">Compliance Garantido</div>
+                <div class="annotation-text">Sem promessas de resultados específicos, sem "garantido", sem ataques a concorrentes nomeados. A escassez de vagas é real (capacidade limitada da equipa). Prazo de 7 dias refere-se à entrega da estratégia, não a resultados.</div>
+            </div>
+        </div>
+        <!-- FIM VARIAÇÕES -->
+
+        <div class="copy-card">
+            <div class="copy-label">Subtítulo</div>
+            <div class="copy-text large">Ajudamos <span class="highlight-gold">empresas estabelecidas</span> a transformar investimento em marketing em <span class="highlight-gold">crescimento previsível</span>, com estratégias orientadas a ROI e aquisição de clientes — <span class="highlight-green">não apenas "likes" e "seguidores"</span>.</div>
+        </div>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Solicitação do João atendida</div>
+            <div class="annotation-text"><strong>"Posicionamento mais premium (focado em empresas com estrutura, não iniciantes)"</strong> — "Empresas estabelecidas" filtra iniciantes. <strong>"Menos foco em redes sociais, mais performance"</strong> — Rejeitamos explicitamente "likes e seguidores".</div>
+        </div>
+
+        <div class="copy-card">
+            <div class="copy-label">Badges Flutuantes (ao lado da foto do João)</div>
+            <div class="badges">
+                <span class="badge gold">+700 empresas a gerar resultados</span>
+                <span class="badge gold">8+ anos de experiência</span>
+                <span class="badge gold">10 especialistas dedicados</span>
+            </div>
+        </div>
+
+        <div class="annotation importante">
+            <span class="annotation-icon">i</span>
+            <div class="annotation-title">Hero com autoridade</div>
+            <div class="annotation-text">O João concordou com "Hero com autoridade" — a foto do expert + badges de resultados concretos criam prova social imediata antes do scroll.</div>
+        </div>
+
+        <div class="copy-card highlight-joao">
+            <div class="copy-label">CTA Principal</div>
+            <a href="#" class="btn-primary">Agendar Reunião Estratégica →</a>
+        </div>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Solicitação do João atendida</div>
+            <div class="annotation-text"><strong>"Ajustar o CTA: menos 'análise gratuita' e mais 'reunião estratégica'"</strong> — CTA alterado para "Reunião Estratégica", linguagem mais premium e profissional.</div>
+        </div>
+
+        <div class="copy-card highlight-joao">
+            <div class="copy-label">Nota de Qualificação (abaixo do CTA)</div>
+            <div class="copy-text" style="color: var(--gold); font-size: 14px;">Para empresas com faturação superior a 15.000€/mês que procuram crescimento real.</div>
+        </div>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Solicitação do João atendida</div>
+            <div class="annotation-text"><strong>"Linguagem que naturalmente afaste clientes de baixo investimento"</strong> — A nota de qualificação com valor mínimo de faturação filtra curiosos e clientes sem orçamento antes mesmo de clicarem.</div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== PROBLEMA ==================== -->
+    <section class="section">
+        <span class="section-label">Secção 02</span>
+        <h2 class="section-title">Problema — "O Custo de Escolher Mal"</h2>
+
+        <div class="copy-card">
+            <div class="copy-label">Título</div>
+            <div class="copy-text headline">Já passou por isto?</div>
+            <div class="copy-text" style="color: var(--gray); margin-top: 8px;">O ciclo que a maioria dos empresários conhece bem demais.</div>
+        </div>
+
+        <div class="annotation importante">
+            <span class="annotation-icon">i</span>
+            <div class="annotation-title">Secção da "agência barata"</div>
+            <div class="annotation-text">O João concordou especificamente com esta secção: <strong>"Secção da agência barata"</strong>. Mostra o custo real de escolher mal e posiciona a PowerLogos como investimento inteligente.</div>
+        </div>
+
+        <div class="pain-timeline">
+            <div class="pain-step">
+                <div class="pain-step-number">1</div>
+                <h4 style="color: var(--red);">Contrata "Barato"</h4>
+                <p>300€/mês. "É só para testar."</p>
+            </div>
+            <div class="pain-step">
+                <div class="pain-step-number">2</div>
+                <h4 style="color: var(--red);">Zero Resultados</h4>
+                <p>Posts genéricos, zero leads.</p>
+            </div>
+            <div class="pain-step">
+                <div class="pain-step-number">3</div>
+                <h4 style="color: var(--gold);">Recomeça do Zero</h4>
+                <p>Muda de agência, paga setup de novo.</p>
+            </div>
+            <div class="pain-step">
+                <div class="pain-step-number">4</div>
+                <h4 style="color: var(--green);">PowerLogos</h4>
+                <p>Resultados desde a primeira semana.</p>
+            </div>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comparison-box bad">
+                <div class="comparison-label">✕ Agência "Barata" (6 meses)</div>
+                <p style="font-size: 14px;">
+                    Mês 1-3: 300€/mês = 900€<br>
+                    Resultado: Zero leads<br>
+                    Mês 4-6: Nova agência = 1.200€<br>
+                    Setup novo: +500€<br>
+                    <strong style="color: var(--red); font-size: 18px; margin-top: 12px; display: block;">Total: 2.600€ gastos, 0 resultados</strong>
+                </p>
+            </div>
+            <div class="comparison-box good">
+                <div class="comparison-label">✓ PowerLogos (6 meses)</div>
+                <p style="font-size: 14px;">
+                    Mês 1: Diagnóstico + plano<br>
+                    Semana 2: Primeiros leads<br>
+                    Mês 3: ROI positivo<br>
+                    Mês 6: Sistema escalável<br>
+                    <strong style="color: var(--green); font-size: 18px; margin-top: 12px; display: block;">Investimento que paga a si próprio</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="copy-card">
+            <div class="copy-label">Frase de Transição</div>
+            <div class="copy-text">Na PowerLogos, fazemos certo à primeira — porque o tempo e o capital da sua empresa merecem respeito.</div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== SOLUÇÃO ==================== -->
+    <section class="section">
+        <span class="section-label">Secção 03</span>
+        <h2 class="section-title">Solução — PowerLogos</h2>
+
+        <div class="copy-card highlight-joao">
+            <div class="copy-label">Título</div>
+            <div class="copy-text headline">Marketing orientado a <span class="highlight-gold">resultados</span>. Não a métricas de vaidade.</div>
+        </div>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Posicionamento premium atendido</div>
+            <div class="annotation-text">Diferenciamos explicitamente de agências focadas em "métricas de vaidade" (likes, seguidores). O foco está em resultados de negócio.</div>
+        </div>
+
+        <div class="copy-card">
+            <div class="copy-label">Parágrafo de Posicionamento</div>
+            <div class="copy-text">A PowerLogos <span class="highlight-green">não é uma agência de "gestão de redes sociais"</span>. Somos parceiros estratégicos de crescimento para empresas que querem transformar marketing em <span class="highlight-gold">aquisição de clientes</span> e <span class="highlight-gold">aumento de faturação</span>.</div>
+            <div class="copy-text" style="margin-top: 12px;">Trabalhamos com um <span class="highlight-gold">número limitado de clientes</span> para garantir atenção dedicada, estratégia personalizada e resultados mensuráveis desde o primeiro mês.</div>
+        </div>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Linguagem que afasta clientes desalinhados</div>
+            <div class="annotation-text">"Não somos agência de gestão de redes sociais" + "número limitado de clientes" transmite exclusividade e afasta quem procura serviços baratos em massa.</div>
+        </div>
+
+        <div class="counters">
+            <div class="counter">
+                <div class="counter-number">+700</div>
+                <div class="counter-label">Empresas atendidas</div>
+            </div>
+            <div class="counter">
+                <div class="counter-number">4.9★</div>
+                <div class="counter-label">No Google</div>
+            </div>
+            <div class="counter">
+                <div class="counter-number">10</div>
+                <div class="counter-label">Especialistas</div>
+            </div>
+            <div class="counter">
+                <div class="counter-number">8+</div>
+                <div class="counter-label">Anos no mercado</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== SERVIÇOS ==================== -->
+    <section class="section">
+        <span class="section-label">Secção 04</span>
+        <h2 class="section-title">Serviços — O Que Entregamos</h2>
+
+        <div class="copy-card">
+            <div class="copy-label">Introdução</div>
+            <div class="copy-text headline" style="font-size: 20px;">Soluções para empresas que querem crescer a sério</div>
+            <div class="copy-text" style="color: var(--gray); margin-top: 8px;">Cada serviço é desenhado para gerar retorno mensurável — não apenas "presença online".</div>
+        </div>
+
+        <div class="annotation importante">
+            <span class="annotation-icon">i</span>
+            <div class="annotation-title">Serviços organizados por impacto</div>
+            <div class="annotation-text">O documento de Direção Estratégica pede serviços organizados por impacto — performance primeiro. Por isso "Aquisição de Clientes" aparece no topo.</div>
+        </div>
+
+        <!-- Grid de Serviços -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;">
+
+            <!-- Serviço 1 -->
+            <div class="copy-card" style="border-left: 3px solid var(--gold);">
+                <div class="copy-label" style="color: var(--gold);">01 — Performance</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Aquisição de Clientes & Tráfego Pago</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Geramos leads qualificados de forma previsível através de Google Ads e Meta Ads. Campanhas orientadas para trazer clientes com intenção de compra.</div>
+                <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
+                    <li>Leads qualificados com intenção de compra</li>
+                    <li>Custo por lead optimizado e previsível</li>
+                    <li>ROI mensurável desde o primeiro mês</li>
+                </ul>
+            </div>
+
+            <!-- Serviço 2 -->
+            <div class="copy-card" style="border-left: 3px solid var(--purple-light);">
+                <div class="copy-label" style="color: var(--purple-light);">02 — Conversão</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Websites & Landing Pages</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Criamos páginas pensadas para transformar visitantes em clientes. Totalmente integradas com campanhas de marketing e optimizadas para conversão.</div>
+                <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
+                    <li>Taxas de conversão acima da média</li>
+                    <li>Páginas integradas com funis de aquisição</li>
+                    <li>Experiência optimizada para decisores B2B</li>
+                </ul>
+            </div>
+
+            <!-- Serviço 3 -->
+            <div class="copy-card" style="border-left: 3px solid var(--green);">
+                <div class="copy-label" style="color: var(--green);">03 — Estratégia</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Estratégia & Gestão de Redes Sociais</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Transformamos a presença digital da sua empresa numa ferramenta de crescimento. Estratégias alinhadas com os objectivos do negócio.</div>
+                <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
+                    <li>Posicionamento claro no mercado</li>
+                    <li>Autoridade percebida pelo público-alvo</li>
+                    <li>Consistência na comunicação</li>
+                </ul>
+            </div>
+
+            <!-- Serviço 4 -->
+            <div class="copy-card" style="border-left: 3px solid var(--gold);">
+                <div class="copy-label" style="color: var(--gold);">04 — Conteúdo</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Conteúdo & Produção Multimédia</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Criamos conteúdo que capta atenção, gera envolvimento e posiciona a sua marca. Vídeos de alto impacto pensados para aumentar conversão.</div>
+                <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
+                    <li>Conteúdo alinhado com objectivos de negócio</li>
+                    <li>Vídeos optimizados para conversão</li>
+                    <li>Materiais para todo o funil de vendas</li>
+                </ul>
+            </div>
+
+            <!-- Serviço 5 -->
+            <div class="copy-card" style="border-left: 3px solid var(--purple-light);">
+                <div class="copy-label" style="color: var(--purple-light);">05 — Influência</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Influencer Marketing & Parcerias</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Ligamos a sua marca a influenciadores e figuras públicas para gerar impacto real. Campanhas alinhadas com os objectivos da marca.</div>
+                <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
+                    <li>Parcerias com influenciadores alinhados</li>
+                    <li>Campanhas com métricas de performance</li>
+                    <li>Gestão completa do processo</li>
+                </ul>
+            </div>
+
+            <!-- Serviço 6 -->
+            <div class="copy-card" style="border-left: 3px solid var(--green);">
+                <div class="copy-label" style="color: var(--green);">06 — Marca</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Branding & Posicionamento</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Construímos marcas que se destacam e são reconhecidas no mercado. Identidade visual e posicionamento que aumentam a perceção de valor.</div>
+                <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
+                    <li>Identidade que transmite profissionalismo</li>
+                    <li>Perceção de valor alinhada com posicionamento</li>
+                    <li>Marca memorável e diferenciada</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copy-card" style="margin-top: 24px; text-align: center; background: linear-gradient(135deg, rgba(86, 54, 209, 0.1), rgba(245, 158, 11, 0.05));">
+            <div class="copy-text" style="font-weight: 600;">Uma abordagem completa, com um único objectivo:</div>
+            <div class="copy-text headline" style="font-size: 20px; color: var(--gold); margin-top: 8px;">Gerar crescimento real e sustentável para o seu negócio.</div>
+        </div>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Textos do documento original</div>
+            <div class="annotation-text">Estes serviços foram retirados exactamente do documento "Conteúdo Landing Page — PowerLogos (Serviços).dotx" enviado pelo João. Mantida a estrutura e linguagem original.</div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== METODOLOGIA ==================== -->
+    <section class="section">
+        <span class="section-label">Secção 05</span>
+        <h2 class="section-title">Metodologia — "Como Funciona"</h2>
+
+        <div class="copy-card">
+            <div class="copy-label">Título</div>
+            <div class="copy-text headline">Do diagnóstico ao resultado — um processo claro e transparente</div>
+        </div>
+
+        <div class="annotation importante">
+            <span class="annotation-icon">i</span>
+            <div class="annotation-title">Metodologia aprovada pelo João</div>
+            <div class="annotation-text">O João concordou especificamente com <strong>"Metodologia"</strong> na sua mensagem. Um processo claro reduz incerteza e mostra profissionalismo.</div>
+        </div>
+
+        <div class="method-steps">
+            <div class="method-step">
+                <div class="method-step-icon">🔍</div>
+                <h4>Diagnóstico</h4>
+                <p>Análise completa do negócio, mercado e concorrência.</p>
+            </div>
+            <div class="method-step">
+                <div class="method-step-icon">📋</div>
+                <h4>Estratégia</h4>
+                <p>Plano personalizado com metas e cronograma.</p>
+            </div>
+            <div class="method-step">
+                <div class="method-step-icon">🚀</div>
+                <h4>Execução</h4>
+                <p>Implementação com gestor dedicado.</p>
+            </div>
+            <div class="method-step">
+                <div class="method-step-icon">📊</div>
+                <h4>Otimização</h4>
+                <p>Relatórios mensais e escalabilidade.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== PROVA SOCIAL ==================== -->
+    <section class="section">
+        <span class="section-label">Secção 06 + 07</span>
+        <h2 class="section-title">Prova Social</h2>
+
+        <div class="annotation importante">
+            <span class="annotation-icon">i</span>
+            <div class="annotation-title">Prova social (vídeos + reviews)</div>
+            <div class="annotation-text">O João concordou com <strong>"Prova social (vídeos + reviews)"</strong>. Esta secção combina testemunhos em vídeo + avaliações Google + logos de clientes para máxima credibilidade.</div>
+        </div>
+
+        <div class="copy-card">
+            <div class="copy-label">Testemunhos em Vídeo</div>
+            <div class="copy-text">
+                <strong>[VÍDEO 1]</strong><br>
+                "Passámos de zero presença online para um fluxo consistente de leads qualificados em menos de 60 dias."<br>
+                <span style="color: var(--green);">Resultado: +300% em leads qualificados</span>
+            </div>
+        </div>
+
+        <div class="copy-card">
+            <div class="copy-label">Avaliações Google</div>
+            <div class="badges" style="margin-bottom: 16px;">
+                <span class="badge gold">Google ★★★★★ 4.9/5</span>
+            </div>
+            <div class="copy-text" style="font-size: 14px; font-style: italic;">
+                "O investimento compensa. Não é a opção mais barata, mas é a que funciona. Em 6 meses recuperámos o investimento e agora temos um sistema que continua a gerar clientes."<br>
+                <span style="color: var(--gray);">— Ana C., há 2 meses</span>
+            </div>
+        </div>
+
+        <div class="copy-card">
+            <div class="copy-label">Logos de Clientes</div>
+            <div class="copy-text" style="color: var(--gray);">
+                [Inserir logos de clientes reais — solicitar ao João]<br>
+                "Empresas que já confiam na PowerLogos"
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== EQUIPA ==================== -->
+    <section class="section">
+        <span class="section-label">Secção 08</span>
+        <h2 class="section-title">Equipa</h2>
+
+        <div class="copy-card">
+            <div class="copy-label">Título</div>
+            <div class="copy-text headline">Conheça quem vai trabalhar consigo</div>
+            <div class="copy-text" style="color: var(--gray); margin-top: 8px;">Não trabalhamos com estagiários. A sua conta é gerida por especialistas com experiência comprovada.</div>
+        </div>
+
+        <div class="annotation importante">
+            <span class="annotation-icon">i</span>
+            <div class="annotation-title">Humanização premium</div>
+            <div class="annotation-text">"Não trabalhamos com estagiários" reforça o posicionamento premium. O cliente sabe que vai ter especialistas seniores, não juniores a aprender.</div>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-avatar">JL</div>
+                <h4>João D. Luzia</h4>
+                <p>CEO & Estratega</p>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">RG</div>
+                <h4>Rita Garcia</h4>
+                <p>COO</p>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">PS</div>
+                <h4>Pedro Simões</h4>
+                <p>CFO (ex-Deloitte)</p>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">TR</div>
+                <h4>Thiago Rosa</h4>
+                <p>Performance Marketing</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="section">
+        <span class="section-label">Secção 09</span>
+        <h2 class="section-title">FAQ — Perguntas Frequentes</h2>
+
+        <div class="copy-card">
+            <div class="copy-label">Título</div>
+            <div class="copy-text headline" style="font-size: 20px;">Perguntas frequentes de empresas como a sua</div>
+        </div>
+
+        <div class="annotation importante">
+            <span class="annotation-icon">i</span>
+            <div class="annotation-title">FAQ orientado a objeções</div>
+            <div class="annotation-text">Cada pergunta responde a uma objeção real que impede o visitante de avançar: preço, compromisso, tempo, resultados. Se o cliente tem dúvidas, o FAQ resolve antes que saia da página.</div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <div class="copy-card" style="margin-bottom: 12px;">
+                <div class="copy-label" style="color: var(--gold);">Pergunta 1</div>
+                <div class="copy-text" style="font-weight: 600; margin-bottom: 8px;">Qual é o investimento mínimo para trabalhar com a PowerLogos?</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 14px;">Trabalhamos com empresas que têm capacidade de investir de forma consistente em marketing. Os nossos projetos começam a partir de [X]€/mês, dependendo do âmbito e objetivos. Durante a reunião estratégica, avaliamos se faz sentido avançar com base no potencial de retorno para o seu negócio específico.</div>
+            </div>
+
+            <div class="copy-card" style="margin-bottom: 12px;">
+                <div class="copy-label" style="color: var(--gold);">Pergunta 2</div>
+                <div class="copy-text" style="font-weight: 600; margin-bottom: 8px;">Trabalham com contratos de fidelidade?</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 14px;">Não acreditamos em reter clientes por contrato — retemos por resultados. Trabalhamos com compromissos mínimos de 3 meses para dar tempo à estratégia funcionar, mas a continuidade depende sempre dos resultados entregues.</div>
+            </div>
+
+            <div class="copy-card" style="margin-bottom: 12px;">
+                <div class="copy-label" style="color: var(--gold);">Pergunta 3</div>
+                <div class="copy-text" style="font-weight: 600; margin-bottom: 8px;">Em quanto tempo verei resultados?</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 14px;">Depende do ponto de partida e dos canais utilizados. Em campanhas de tráfego pago, os primeiros leads surgem geralmente nas primeiras 2 semanas. A transformação completa — com sistema de aquisição consolidado — acontece tipicamente entre 3 a 6 meses.</div>
+            </div>
+
+            <div class="copy-card" style="margin-bottom: 12px;">
+                <div class="copy-label" style="color: var(--gold);">Pergunta 4</div>
+                <div class="copy-text" style="font-weight: 600; margin-bottom: 8px;">Como medem os resultados? Que relatórios recebo?</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 14px;">Definimos KPIs claros no início do projeto: leads gerados, custo por lead, taxa de conversão, ROI. Recebe relatórios mensais com métricas reais e reuniões de acompanhamento para discutir resultados e ajustes.</div>
+            </div>
+
+            <div class="copy-card" style="margin-bottom: 12px;">
+                <div class="copy-label" style="color: var(--gold);">Pergunta 5</div>
+                <div class="copy-text" style="font-weight: 600; margin-bottom: 8px;">A PowerLogos trabalha com empresas do meu setor?</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 14px;">Trabalhamos com diversos setores: serviços, saúde, imobiliário, hotelaria, retalho e B2B. O que procuramos são empresas com estrutura estabelecida e ambição de crescimento — independentemente do setor.</div>
+            </div>
+
+            <div class="copy-card" style="margin-bottom: 12px;">
+                <div class="copy-label" style="color: var(--gold);">Pergunta 6</div>
+                <div class="copy-text" style="font-weight: 600; margin-bottom: 8px;">Qual a diferença entre a PowerLogos e outras agências?</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 14px;">A maioria das agências vende "gestão de redes sociais" — nós vendemos crescimento. Focamo-nos em resultados de negócio (leads, vendas, ROI), não em métricas de vaidade. Trabalhamos com poucos clientes para garantir atenção dedicada e somos certificados Google Partner, Meta Partner e TikTok Partner.</div>
+            </div>
+
+            <div class="copy-card" style="margin-bottom: 12px;">
+                <div class="copy-label" style="color: var(--gold);">Pergunta 7</div>
+                <div class="copy-text" style="font-weight: 600; margin-bottom: 8px;">E se eu já tiver trabalhado com agências e não tiver tido resultados?</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 14px;">É precisamente para isso que começamos com um diagnóstico estratégico. Analisamos o que foi feito, identificamos o que falhou e propomos uma abordagem diferente. Muitos dos nossos melhores clientes vieram de experiências frustrantes com outras agências.</div>
+            </div>
+        </div>
+
+        <div class="annotation joao-request" style="margin-top: 20px;">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">FAQ responde objeções de clientes premium</div>
+            <div class="annotation-text">Perguntas sobre investimento, compromisso e resultados filtram clientes que não estão preparados para investir seriamente. A resposta sobre "3 meses mínimos" e "depende do investimento" afasta quem procura soluções baratas e rápidas.</div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== FORMULÁRIO ==================== -->
+    <section class="section">
+        <span class="section-label">Formulário</span>
+        <h2 class="section-title">Formulário de Qualificação</h2>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Solicitação do João atendida</div>
+            <div class="annotation-text"><strong>"Incluir filtros no formulário (faturação, orçamento, tipo de negócio)"</strong> — Os 3 campos de qualificação estão destacados em dourado abaixo.</div>
+        </div>
+
+        <div class="form-preview">
+            <div class="form-field">
+                <label>Nome completo *</label>
+                <input type="text" placeholder="O seu nome">
+            </div>
+
+            <div class="form-field">
+                <label>Email profissional *</label>
+                <input type="email" placeholder="email@empresa.pt">
+            </div>
+
+            <div class="form-field">
+                <label>Nome da empresa *</label>
+                <input type="text" placeholder="Nome da empresa">
+            </div>
+
+            <div class="form-field qualification">
+                <label>Setor de atividade * (FILTRO)</label>
+                <select>
+                    <option>Selecionar...</option>
+                    <option>Serviços</option>
+                    <option>Saúde</option>
+                    <option>Imobiliário</option>
+                    <option>Hotelaria</option>
+                    <option>Restauração</option>
+                    <option>Retalho</option>
+                    <option>E-commerce</option>
+                    <option>B2B</option>
+                    <option>Outro</option>
+                </select>
+            </div>
+
+            <div class="form-field qualification">
+                <label>Faturação mensal aproximada * (FILTRO)</label>
+                <select>
+                    <option>Selecionar...</option>
+                    <option>Menos de 10.000€</option>
+                    <option>10.000€ - 25.000€</option>
+                    <option>25.000€ - 50.000€</option>
+                    <option>50.000€ - 100.000€</option>
+                    <option>Mais de 100.000€</option>
+                </select>
+            </div>
+
+            <div class="form-field qualification">
+                <label>Orçamento mensal para marketing * (FILTRO)</label>
+                <select>
+                    <option>Selecionar...</option>
+                    <option>Menos de 500€</option>
+                    <option>500€ - 1.000€</option>
+                    <option>1.000€ - 2.500€</option>
+                    <option>2.500€ - 5.000€</option>
+                    <option>Mais de 5.000€</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label>Qual é o seu principal objetivo? *</label>
+                <select>
+                    <option>Selecionar...</option>
+                    <option>Gerar mais leads</option>
+                    <option>Aumentar vendas</option>
+                    <option>Melhorar posicionamento</option>
+                    <option>Lançar novo produto</option>
+                    <option>Outro</option>
+                </select>
+            </div>
+
+            <a href="#" class="btn-primary" style="margin-top: 16px;">Agendar Reunião Estratégica →</a>
+        </div>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Estratégia de qualificação</div>
+            <div class="annotation-text">Os campos de <strong>faturação</strong> e <strong>orçamento</strong> permitem identificar imediatamente leads desalinhados (faturação &lt;10k ou orçamento &lt;500€) e priorizá-los de forma diferente no CRM.</div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section class="section">
+        <span class="section-label">CTA Final</span>
+        <h2 class="section-title">Fecho</h2>
+
+        <div class="copy-card" style="text-align: center; padding: 40px;">
+            <div class="copy-text headline" style="margin-bottom: 16px;">Pronto para transformar o marketing da sua empresa em resultados reais?</div>
+            <div class="copy-text" style="color: var(--gray); margin-bottom: 24px;">Agende uma reunião estratégica connosco. Sem compromisso, sem pressão — apenas uma conversa honesta sobre o potencial de crescimento do seu negócio.</div>
+            <a href="#" class="btn-primary">Agendar Reunião Estratégica →</a>
+            <div class="copy-text" style="color: var(--gold); font-size: 13px; margin-top: 16px;">Esta reunião é indicada para empresas com faturação superior a 15.000€/mês que procuram crescimento consistente através do digital.</div>
+        </div>
+
+        <div class="annotation joao-request">
+            <span class="annotation-icon">J</span>
+            <div class="annotation-title">Sem "gratuita" — conforme solicitado</div>
+            <div class="annotation-text">O CTA final diz "reunião estratégica connosco" em vez de "análise gratuita", conforme pedido do João. A nota de qualificação reforça o filtro de faturação mínima.</div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ==================== RESUMO SOLICITAÇÕES ==================== -->
+    <section class="section">
+        <span class="section-label">Checklist</span>
+        <h2 class="section-title">Resumo: Solicitações do João Atendidas</h2>
+
+        <div class="copy-card" style="background: rgba(16, 185, 129, 0.1); border-color: var(--green);">
+            <ul class="benefits-list" style="color: var(--green);">
+                <li><strong>Posicionamento mais premium</strong> — "Empresas estabelecidas", linguagem de resultados, exclusividade</li>
+                <li><strong>Foco em empresas com estrutura, não iniciantes</strong> — Nota de faturação mínima 15.000€</li>
+                <li><strong>CTA: "reunião estratégica" (não "análise gratuita")</strong> — Alterado em todos os botões</li>
+                <li><strong>Filtros no formulário</strong> — Faturação, orçamento, setor de atividade</li>
+                <li><strong>Linguagem que afaste clientes de baixo investimento</strong> — Nota de qualificação, linguagem premium</li>
+                <li><strong>Comunicação orientada a ROI e aquisição</strong> — Foco constante em resultados de negócio</li>
+                <li><strong>Menos foco em redes sociais, mais performance</strong> — "Não apenas likes e seguidores"</li>
+                <li><strong>Hero com autoridade</strong> — Foto expert + badges de resultados</li>
+                <li><strong>Prova social (vídeos + reviews)</strong> — Secções 06 + 07 completas</li>
+                <li><strong>Secção da "agência barata"</strong> — Secção 02 com timeline de dor</li>
+                <li><strong>Serviços completos</strong> — Secção 04 com os 6 serviços do documento original</li>
+                <li><strong>Metodologia</strong> — Secção 05 com 4 passos claros</li>
+                <li><strong>FAQ</strong> — Secção 09 com 7 perguntas que respondem objeções</li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<footer style="text-align: center; padding: 40px 24px; color: var(--gray); font-size: 13px; border-top: 1px solid rgba(255,255,255,0.06);">
+    <p>Copy Premium v1.1 — PowerLogos — Preview com Anotações</p>
+    <p style="margin-top: 8px;">Desenvolvido por Elton Miranda — 02/04/2026</p>
+</footer>
+
+</body>
+</html>
