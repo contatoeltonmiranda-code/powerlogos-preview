@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerLogos — Copy Premium v1.1 (Preview com Anotações)</title>
+    <title>PowerLogos — Copy Premium v1.2 (Preview com Anotações + Feedback Cliente)</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -13,6 +13,7 @@
             --gold: #f59e0b;
             --green: #10b981;
             --red: #ef4444;
+            --cyan: #06b6d4;
             --dark: #0f0f1a;
             --dark-card: #1a1a2e;
             --gray: #64748b;
@@ -78,6 +79,56 @@
         .legend-dot.joao { background: var(--gold); }
         .legend-dot.estrategia { background: var(--green); }
         .legend-dot.importante { background: var(--purple-light); }
+        .legend-dot.feedback { background: var(--cyan); }
+
+        /* Annotation v1.2 — Feedback Cliente */
+        .annotation.feedback-v12 {
+            background: rgba(6, 182, 212, 0.1);
+            border-left-color: var(--cyan);
+            border: 1px solid rgba(6, 182, 212, 0.35);
+            border-left-width: 3px;
+        }
+
+        .annotation.feedback-v12 .annotation-icon {
+            background: var(--cyan);
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .feedback-badge {
+            display: inline-block;
+            background: var(--cyan);
+            color: var(--dark);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .version-tag {
+            display: inline-block;
+            background: var(--cyan);
+            color: var(--dark);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+
+        .placeholder-cliente {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px dashed var(--cyan);
+            color: var(--cyan);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-style: italic;
+        }
 
         /* Container Principal */
         .container {
@@ -593,13 +644,13 @@
 
 <!-- Header de Contexto -->
 <header class="context-header">
-    <h1>PowerLogos — Copy Premium v1.1</h1>
-    <p>Preview com anotações estratégicas baseadas nas solicitações do João</p>
+    <h1>PowerLogos — Copy Premium <span class="version-tag">v1.2</span></h1>
+    <p>Preview com anotações estratégicas + feedback do cliente aplicado (09/04/2026)</p>
 
     <div class="legend">
         <div class="legend-item">
             <span class="legend-dot joao"></span>
-            <span>Solicitação directa do João</span>
+            <span>Solicitação original do João (v1.1)</span>
         </div>
         <div class="legend-item">
             <span class="legend-dot estrategia"></span>
@@ -608,6 +659,10 @@
         <div class="legend-item">
             <span class="legend-dot importante"></span>
             <span>Ponto importante</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot feedback"></span>
+            <span>Feedback Cliente Aplicado (v1.2)</span>
         </div>
     </div>
 </header>
@@ -620,90 +675,61 @@
         <h2 class="section-title">Hero (Acima da Dobra)</h2>
 
         <div class="copy-card">
-            <div class="copy-label">Badges de Autoridade</div>
+            <div class="copy-label">Badges de Autoridade (v1.2 — hierarquia antecipada)</div>
             <div class="badges">
                 <span class="badge">Google Partner</span>
                 <span class="badge">Meta Partner</span>
-                <span class="badge">TikTok Partner</span>
+                <span class="badge">+700 empresas acompanhadas</span>
             </div>
         </div>
 
-        <div class="annotation importante">
-            <span class="annotation-icon">i</span>
-            <div class="annotation-title">Por que isto é importante</div>
-            <div class="annotation-text">Certificações logo no topo estabelecem credibilidade imediata. O documento de Direção Estratégica pedia que Google Partner, Meta Partner e TikTok Partner estivessem visíveis.</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">7</span>
+            <span class="feedback-badge">Feedback Ponto 7 — Hierarquia antecipada</span>
+            <div class="annotation-title">Diferenciais no topo</div>
+            <div class="annotation-text">Google Partner, Meta Partner e "+700 empresas" agora aparecem como badge de autoridade imediato. A autoridade é estabelecida antes mesmo do headline.</div>
         </div>
 
-        <div class="copy-card highlight-joao">
-            <div class="copy-label">Headline Principal</div>
-            <div class="copy-text headline">O marketing digital da sua empresa <span class="highlight-gold">não está a gerar o retorno</span> que deveria?</div>
+        <div class="copy-card" style="border-color: var(--cyan); box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);">
+            <div class="copy-label" style="color: var(--cyan);">Headline Principal (v1.2 — reescrita)</div>
+            <div class="copy-text headline">Transformamos investimento em <span class="highlight-gold">anúncios</span> em clientes reais para a sua empresa.</div>
         </div>
 
-        <div class="annotation joao-request">
-            <span class="annotation-icon">J</span>
-            <div class="annotation-title">Solicitação do João atendida</div>
-            <div class="annotation-text"><strong>"Comunicação mais orientada a crescimento, ROI e aquisição de clientes"</strong> — A headline foca em "retorno" (ROI), não em redes sociais ou seguidores.</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">3</span>
+            <span class="feedback-badge">Feedback Ponto 3 + 7 — Foco em anúncios</span>
+            <div class="annotation-title">Google Ads + Meta Ads no centro</div>
+            <div class="annotation-text">A headline agora nomeia explicitamente "anúncios" e posiciona a aquisição de clientes como promessa central. O tom é afirmativo e premium — não confrontacional.</div>
         </div>
 
-        <!-- VARIAÇÕES DE HEADLINE -->
-        <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(245, 158, 11, 0.1)); border: 2px dashed var(--gold); border-radius: 16px; padding: 24px; margin: 24px 0;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                <span style="background: var(--red); color: white; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase;">Variações para Teste A/B</span>
-            </div>
-
-            <div class="copy-card" style="border-color: var(--red); margin-bottom: 16px;">
-                <div class="copy-label" style="color: var(--red);">VARIAÇÃO A — "O Dinheiro a Arder"</div>
-                <div class="copy-text headline" style="font-size: 22px;">Quanto dinheiro a sua empresa <span style="color: var(--red);">já perdeu</span> com agências que não entregam?</div>
-                <div class="copy-text" style="color: var(--gray); margin-top: 12px; font-size: 14px;">Se já trocou de agência mais do que uma vez nos últimos 2 anos e continua sem resultados, o problema não é o seu negócio — é quem escolheu para o fazer crescer.</div>
-                <div style="margin-top: 12px; padding: 8px 12px; background: rgba(239, 68, 68, 0.1); border-radius: 6px; font-size: 12px;">
-                    <strong>Tom:</strong> Confrontacional | <strong>Filtro:</strong> Quem já trocou de agência
-                </div>
-            </div>
-
-            <div class="copy-card" style="border-color: var(--gold);">
-                <div class="copy-label" style="color: var(--gold);">VARIAÇÃO B — "A Verdade Incómoda"</div>
-                <div class="copy-text headline" style="font-size: 22px;">A sua agência actual está a ganhar dinheiro. <span style="color: var(--gold);">E o seu negócio?</span></div>
-                <div class="copy-text" style="color: var(--gray); margin-top: 12px; font-size: 14px;">Enquanto paga fees mensais, a sua agência lucra. Mas quantos clientes novos entraram pela porta este mês por causa do marketing deles?</div>
-                <div style="margin-top: 12px; padding: 8px 12px; background: rgba(245, 158, 11, 0.1); border-radius: 6px; font-size: 12px;">
-                    <strong>Tom:</strong> Provocativo | <strong>Filtro:</strong> Quem não tem métricas claras
-                </div>
-            </div>
-
-            <div class="copy-card" style="border-color: var(--green); margin-top: 16px;">
-                <div class="copy-label" style="color: var(--green);">VARIAÇÃO C — "Oportunidade + Urgência"</div>
-                <div class="copy-text headline" style="font-size: 22px;">Tenha a sua estratégia de aquisição de clientes <span style="color: var(--green);">pronta em 7 dias</span> — sem complicações, sem tentativa e erro.</div>
-                <div class="copy-text" style="color: var(--gray); margin-top: 12px; font-size: 14px;">Enquanto outras agências demoram meses a "testar", nós entregamos um plano de acção completo na primeira semana. Diagnóstico, estratégia e primeiras campanhas a rodar — tudo alinhado com os seus objectivos de faturação.</div>
-                <div class="copy-text" style="color: var(--gold); margin-top: 12px; font-size: 13px; font-weight: 600;">Apenas 3 vagas disponíveis este mês para novos projectos estratégicos.</div>
-                <div style="margin-top: 12px; padding: 8px 12px; background: rgba(16, 185, 129, 0.1); border-radius: 6px; font-size: 12px;">
-                    <strong>Tom:</strong> Oportunidade | <strong>Gatilhos:</strong> Prazo específico (7 dias) + Escassez (3 vagas) + Facilidade
-                </div>
-            </div>
-
-            <div class="annotation" style="margin-top: 16px; background: rgba(16, 185, 129, 0.08);">
-                <span class="annotation-icon" style="background: var(--green);">✓</span>
-                <div class="annotation-title">Compliance Garantido</div>
-                <div class="annotation-text">Sem promessas de resultados específicos, sem "garantido", sem ataques a concorrentes nomeados. A escassez de vagas é real (capacidade limitada da equipa). Prazo de 7 dias refere-se à entrega da estratégia, não a resultados.</div>
-            </div>
+        <!-- VARIAÇÕES DE HEADLINE — REMOVIDAS NA v1.2 -->
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">1</span>
+            <span class="feedback-badge">Feedback Ponto 1 — Tom ajustado</span>
+            <div class="annotation-title">Variações A e B removidas</div>
+            <div class="annotation-text">As variações "Quanto dinheiro a sua empresa já perdeu…" e "A sua agência está a ganhar dinheiro. E o seu negócio?" foram removidas por serem confrontacionais demais. A variação C (com prazo de 7 dias) também foi removida por conter promessa de timing (Ponto 2 do feedback). Arquivo original: variacoes-headline-hero.md.</div>
         </div>
         <!-- FIM VARIAÇÕES -->
 
-        <div class="copy-card">
-            <div class="copy-label">Subtítulo</div>
-            <div class="copy-text large">Ajudamos <span class="highlight-gold">empresas estabelecidas</span> a transformar investimento em marketing em <span class="highlight-gold">crescimento previsível</span>, com estratégias orientadas a ROI e aquisição de clientes — <span class="highlight-green">não apenas "likes" e "seguidores"</span>.</div>
+        <div class="copy-card" style="border-color: var(--cyan);">
+            <div class="copy-label" style="color: var(--cyan);">Subtítulo (v1.2 — reescrito)</div>
+            <div class="copy-text large">A PowerLogos desenha e gere campanhas de <span class="highlight-gold">Google Ads</span> e <span class="highlight-gold">Meta Ads</span> orientadas para gerar <span class="highlight-gold">leads qualificados e clientes</span> — com estratégia, acompanhamento contínuo e métricas claras de retorno.</div>
         </div>
 
-        <div class="annotation joao-request">
-            <span class="annotation-icon">J</span>
-            <div class="annotation-title">Solicitação do João atendida</div>
-            <div class="annotation-text"><strong>"Posicionamento mais premium (focado em empresas com estrutura, não iniciantes)"</strong> — "Empresas estabelecidas" filtra iniciantes. <strong>"Menos foco em redes sociais, mais performance"</strong> — Rejeitamos explicitamente "likes e seguidores".</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">3</span>
+            <span class="feedback-badge">Feedback Ponto 3 + 7 — Anúncios + foco</span>
+            <div class="annotation-title">Google Ads + Meta Ads nomeados</div>
+            <div class="annotation-text">O subtítulo agora cita explicitamente Google Ads e Meta Ads (Ponto 7 — incluir "anúncios" no topo). O foco principal — leads qualificados e clientes — está isolado. Mensagem sem promessas de timing (Ponto 2).</div>
         </div>
 
         <div class="copy-card">
             <div class="copy-label">Badges Flutuantes (ao lado da foto do João)</div>
             <div class="badges">
-                <span class="badge gold">+700 empresas a gerar resultados</span>
+                <span class="badge gold">Google Partner & Meta Partner</span>
+                <span class="badge gold">+700 empresas acompanhadas</span>
                 <span class="badge gold">8+ anos de experiência</span>
-                <span class="badge gold">10 especialistas dedicados</span>
+                <span class="badge gold">Equipa de 10 especialistas</span>
             </div>
         </div>
 
@@ -724,15 +750,16 @@
             <div class="annotation-text"><strong>"Ajustar o CTA: menos 'análise gratuita' e mais 'reunião estratégica'"</strong> — CTA alterado para "Reunião Estratégica", linguagem mais premium e profissional.</div>
         </div>
 
-        <div class="copy-card highlight-joao">
-            <div class="copy-label">Nota de Qualificação (abaixo do CTA)</div>
-            <div class="copy-text" style="color: var(--gold); font-size: 14px;">Para empresas com faturação superior a 15.000€/mês que procuram crescimento real.</div>
+        <div class="copy-card" style="border-color: var(--cyan);">
+            <div class="copy-label" style="color: var(--cyan);">Nota de Qualificação (v1.2 — suavizada)</div>
+            <div class="copy-text" style="color: var(--white); font-size: 14px;">Trabalhamos com empresas que procuram crescer com estratégia e investimento consistente em marketing.</div>
         </div>
 
-        <div class="annotation joao-request">
-            <span class="annotation-icon">J</span>
-            <div class="annotation-title">Solicitação do João atendida</div>
-            <div class="annotation-text"><strong>"Linguagem que naturalmente afaste clientes de baixo investimento"</strong> — A nota de qualificação com valor mínimo de faturação filtra curiosos e clientes sem orçamento antes mesmo de clicarem.</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">4</span>
+            <span class="feedback-badge">Feedback Ponto 4 — Filtro suavizado</span>
+            <div class="annotation-title">Menção de 15.000€/mês removida</div>
+            <div class="annotation-text">A referência a "faturação superior a 15.000€/mês" foi removida do Hero por ser demasiado filtrante no topo. A qualificação rigorosa continua, mas apenas nos dropdowns do formulário (faturação + orçamento). A mensagem pública permanece premium sem afastar potenciais leads qualificados.</div>
         </div>
     </section>
 
@@ -741,69 +768,77 @@
     <!-- ==================== PROBLEMA ==================== -->
     <section class="section">
         <span class="section-label">Secção 02</span>
-        <h2 class="section-title">Problema — "O Custo de Escolher Mal"</h2>
+        <h2 class="section-title" style="color: var(--cyan);">Problema — "O padrão que trava o crescimento" <span class="version-tag">v1.2</span></h2>
+
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">7</span>
+            <span class="feedback-badge">Feedback Ponto 7 — Título neutralizado</span>
+            <div class="annotation-title">"O Custo de Escolher Mal" → "O padrão que trava o crescimento"</div>
+            <div class="annotation-text">Título reformulado de tom negativo para descritivo. Mantém a ideia (padrão comum que impede crescimento) sem o confronto direto.</div>
+        </div>
 
         <div class="copy-card">
             <div class="copy-label">Título</div>
             <div class="copy-text headline">Já passou por isto?</div>
-            <div class="copy-text" style="color: var(--gray); margin-top: 8px;">O ciclo que a maioria dos empresários conhece bem demais.</div>
-        </div>
-
-        <div class="annotation importante">
-            <span class="annotation-icon">i</span>
-            <div class="annotation-title">Secção da "agência barata"</div>
-            <div class="annotation-text">O João concordou especificamente com esta secção: <strong>"Secção da agência barata"</strong>. Mostra o custo real de escolher mal e posiciona a PowerLogos como investimento inteligente.</div>
+            <div class="copy-text" style="color: var(--gray); margin-top: 8px;">Um padrão comum que impede muitas empresas de crescer com o digital.</div>
         </div>
 
         <div class="pain-timeline">
             <div class="pain-step">
                 <div class="pain-step-number">1</div>
-                <h4 style="color: var(--red);">Contrata "Barato"</h4>
-                <p>300€/mês. "É só para testar."</p>
+                <h4 style="color: var(--red);">Contrata pelo preço</h4>
+                <p>Opção barata, parece um bom negócio para começar.</p>
             </div>
             <div class="pain-step">
                 <div class="pain-step-number">2</div>
-                <h4 style="color: var(--red);">Zero Resultados</h4>
-                <p>Posts genéricos, zero leads.</p>
+                <h4 style="color: var(--red);">Resultados que não aparecem</h4>
+                <p>Métricas sem relação com o negócio.</p>
             </div>
             <div class="pain-step">
                 <div class="pain-step-number">3</div>
-                <h4 style="color: var(--gold);">Recomeça do Zero</h4>
-                <p>Muda de agência, paga setup de novo.</p>
+                <h4 style="color: var(--gold);">Recomeça do zero</h4>
+                <p>Muda de parceiro, repete o setup.</p>
             </div>
             <div class="pain-step">
                 <div class="pain-step-number">4</div>
-                <h4 style="color: var(--green);">PowerLogos</h4>
-                <p>Resultados desde a primeira semana.</p>
+                <h4 style="color: var(--green);">A conclusão</h4>
+                <p>O problema é a falta de estratégia.</p>
             </div>
         </div>
 
         <div class="comparison-grid">
             <div class="comparison-box bad">
-                <div class="comparison-label">✕ Agência "Barata" (6 meses)</div>
+                <div class="comparison-label">✕ Agência focada em preço</div>
                 <p style="font-size: 14px;">
-                    Mês 1-3: 300€/mês = 900€<br>
-                    Resultado: Zero leads<br>
-                    Mês 4-6: Nova agência = 1.200€<br>
-                    Setup novo: +500€<br>
-                    <strong style="color: var(--red); font-size: 18px; margin-top: 12px; display: block;">Total: 2.600€ gastos, 0 resultados</strong>
+                    Campanhas genéricas, sem diagnóstico<br>
+                    Métricas de vaidade como entrega<br>
+                    Sem gestor dedicado<br>
+                    Relatórios sem ligação ao negócio<br>
+                    <strong style="color: var(--red); font-size: 16px; margin-top: 12px; display: block;">Investimento sem retorno mensurável</strong>
                 </p>
             </div>
             <div class="comparison-box good">
-                <div class="comparison-label">✓ PowerLogos (6 meses)</div>
+                <div class="comparison-label">✓ PowerLogos</div>
                 <p style="font-size: 14px;">
-                    Mês 1: Diagnóstico + plano<br>
-                    Semana 2: Primeiros leads<br>
-                    Mês 3: ROI positivo<br>
-                    Mês 6: Sistema escalável<br>
-                    <strong style="color: var(--green); font-size: 18px; margin-top: 12px; display: block;">Investimento que paga a si próprio</strong>
+                    Diagnóstico estratégico antes de tudo<br>
+                    Foco em aquisição de clientes e ROI<br>
+                    Gestor dedicado e acompanhamento<br>
+                    Relatórios com métricas de negócio<br>
+                    <strong style="color: var(--green); font-size: 16px; margin-top: 12px; display: block;">Marketing ao serviço do crescimento</strong>
                 </p>
             </div>
         </div>
 
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">2</span>
+            <span class="feedback-badge">Feedback Ponto 2 — Timings removidos</span>
+            <div class="annotation-title">Bloco de comparação reestruturado</div>
+            <div class="annotation-text">Removidos "Semana 2: Primeiros leads", "Mês 3: ROI positivo", "Mês 6: Sistema escalável" e "Resultados desde a primeira semana". Substituídos por descrições qualitativas do método. A Pain Timeline também foi reescrita sem promessas de tempo.</div>
+        </div>
+
         <div class="copy-card">
             <div class="copy-label">Frase de Transição</div>
-            <div class="copy-text">Na PowerLogos, fazemos certo à primeira — porque o tempo e o capital da sua empresa merecem respeito.</div>
+            <div class="copy-text">Na PowerLogos, trabalhamos com método — porque o capital e o tempo da sua empresa merecem rigor.</div>
         </div>
     </section>
 
@@ -814,27 +849,29 @@
         <span class="section-label">Secção 03</span>
         <h2 class="section-title">Solução — PowerLogos</h2>
 
-        <div class="copy-card highlight-joao">
-            <div class="copy-label">Título</div>
-            <div class="copy-text headline">Marketing orientado a <span class="highlight-gold">resultados</span>. Não a métricas de vaidade.</div>
+        <div class="copy-card" style="border-color: var(--cyan);">
+            <div class="copy-label" style="color: var(--cyan);">Título (v1.2 — reescrito)</div>
+            <div class="copy-text headline">Campanhas pensadas para <span class="highlight-gold">gerar clientes</span>. Não para inflar métricas.</div>
         </div>
 
-        <div class="annotation joao-request">
-            <span class="annotation-icon">J</span>
-            <div class="annotation-title">Posicionamento premium atendido</div>
-            <div class="annotation-text">Diferenciamos explicitamente de agências focadas em "métricas de vaidade" (likes, seguidores). O foco está em resultados de negócio.</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">3</span>
+            <span class="feedback-badge">Feedback Ponto 3 + 6 — Foco + simplificação</span>
+            <div class="annotation-title">Título mais direto</div>
+            <div class="annotation-text">De "Marketing orientado a resultados. Não a métricas de vaidade." para "Campanhas pensadas para gerar clientes. Não para inflar métricas." — mais direto, mais curto, com foco em aquisição (campanhas = anúncios).</div>
         </div>
 
-        <div class="copy-card">
-            <div class="copy-label">Parágrafo de Posicionamento</div>
-            <div class="copy-text">A PowerLogos <span class="highlight-green">não é uma agência de "gestão de redes sociais"</span>. Somos parceiros estratégicos de crescimento para empresas que querem transformar marketing em <span class="highlight-gold">aquisição de clientes</span> e <span class="highlight-gold">aumento de faturação</span>.</div>
-            <div class="copy-text" style="margin-top: 12px;">Trabalhamos com um <span class="highlight-gold">número limitado de clientes</span> para garantir atenção dedicada, estratégia personalizada e resultados mensuráveis desde o primeiro mês.</div>
+        <div class="copy-card" style="border-color: var(--cyan);">
+            <div class="copy-label" style="color: var(--cyan);">Parágrafo de Posicionamento (v1.2 — simplificado)</div>
+            <div class="copy-text">A PowerLogos é uma <span class="highlight-gold">agência de performance</span>. O nosso foco é gerar <span class="highlight-gold">leads e clientes</span> através de <span class="highlight-gold">Google Ads e Meta Ads</span>, com estratégia clara e acompanhamento rigoroso.</div>
+            <div class="copy-text" style="margin-top: 12px;">Trabalhamos com um número limitado de clientes para garantir atenção dedicada e resultados mensuráveis.</div>
         </div>
 
-        <div class="annotation joao-request">
-            <span class="annotation-icon">J</span>
-            <div class="annotation-title">Linguagem que afasta clientes desalinhados</div>
-            <div class="annotation-text">"Não somos agência de gestão de redes sociais" + "número limitado de clientes" transmite exclusividade e afasta quem procura serviços baratos em massa.</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">3</span>
+            <span class="feedback-badge">Feedback Ponto 3 + 6 — Foco principal + parágrafo curto</span>
+            <div class="annotation-title">Google Ads + Meta Ads como foco exclusivo</div>
+            <div class="annotation-text">Parágrafo reduzido de 2 blocos longos para 2 frases curtas. A PowerLogos agora declara-se explicitamente "agência de performance" focada em Google Ads e Meta Ads. Removida a promessa "desde o primeiro mês" (Ponto 2 — timings).</div>
         </div>
 
         <div class="counters">
@@ -864,104 +901,107 @@
         <span class="section-label">Secção 04</span>
         <h2 class="section-title">Serviços — O Que Entregamos</h2>
 
-        <div class="copy-card">
-            <div class="copy-label">Introdução</div>
-            <div class="copy-text headline" style="font-size: 20px;">Soluções para empresas que querem crescer a sério</div>
-            <div class="copy-text" style="color: var(--gray); margin-top: 8px;">Cada serviço é desenhado para gerar retorno mensurável — não apenas "presença online".</div>
+        <div class="copy-card" style="border-color: var(--cyan);">
+            <div class="copy-label" style="color: var(--cyan);">Introdução (v1.2)</div>
+            <div class="copy-text headline" style="font-size: 20px;">O que entregamos</div>
+            <div class="copy-text" style="color: var(--gray); margin-top: 8px;">Aquisição é o nosso foco principal. Os restantes serviços existem para reforçar e sustentar o crescimento.</div>
         </div>
 
-        <div class="annotation importante">
-            <span class="annotation-icon">i</span>
-            <div class="annotation-title">Serviços organizados por impacto</div>
-            <div class="annotation-text">O documento de Direção Estratégica pede serviços organizados por impacto — performance primeiro. Por isso "Aquisição de Clientes" aparece no topo.</div>
+        <div class="copy-card" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(245, 158, 11, 0.08)); border: 2px solid var(--cyan); text-align: center;">
+            <div class="copy-label" style="color: var(--cyan);">Bloco de Destaque — Foco Principal (v1.2 NOVO)</div>
+            <div class="copy-text headline" style="font-size: 22px; margin-top: 8px;">O nosso foco: gerar clientes com <span class="highlight-gold">Google Ads e Meta Ads</span></div>
         </div>
 
-        <!-- Grid de Serviços -->
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">3</span>
+            <span class="feedback-badge">Feedback Ponto 3 — Foco principal dominante</span>
+            <div class="annotation-title">Aquisição em destaque visual</div>
+            <div class="annotation-text">Adicionado bloco de destaque que isola visualmente o foco principal (Google Ads + Meta Ads) antes da grelha de serviços. A introdução foi reescrita para explicitar que os outros serviços são suporte, não protagonistas.</div>
+        </div>
+
+        <!-- Grid de Serviços — REORDENADO v1.2 -->
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;">
 
-            <!-- Serviço 1 -->
-            <div class="copy-card" style="border-left: 3px solid var(--gold);">
-                <div class="copy-label" style="color: var(--gold);">01 — Performance</div>
-                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Aquisição de Clientes & Tráfego Pago</div>
-                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Geramos leads qualificados de forma previsível através de Google Ads e Meta Ads. Campanhas orientadas para trazer clientes com intenção de compra.</div>
-                <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
+            <!-- Serviço 1 — FOCO PRINCIPAL -->
+            <div class="copy-card" style="border-left: 4px solid var(--cyan); border-top: 1px solid var(--cyan); border-right: 1px solid var(--cyan); border-bottom: 1px solid var(--cyan); grid-column: 1 / -1; background: rgba(6, 182, 212, 0.06);">
+                <div class="copy-label" style="color: var(--cyan);">01 — FOCO PRINCIPAL</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 18px;">Google Ads & Meta Ads — Aquisição de Clientes</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 14px; margin-top: 8px;">Desenhamos e gerimos campanhas de Google Ads e Meta Ads orientadas para resultados reais: leads qualificados e clientes a entrar no negócio. Começamos com diagnóstico e plano claro. Depois executamos com acompanhamento contínuo e otimização baseada em dados.</div>
+                <ul class="benefits-list" style="margin-top: 12px; font-size: 13px;">
                     <li>Leads qualificados com intenção de compra</li>
-                    <li>Custo por lead optimizado e previsível</li>
-                    <li>ROI mensurável desde o primeiro mês</li>
+                    <li>Custo por lead previsível e otimizado</li>
+                    <li>Acompanhamento contínuo e reporting claro</li>
+                    <li>Estratégia escalável à medida que o negócio cresce</li>
                 </ul>
             </div>
 
             <!-- Serviço 2 -->
             <div class="copy-card" style="border-left: 3px solid var(--purple-light);">
-                <div class="copy-label" style="color: var(--purple-light);">02 — Conversão</div>
-                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Websites & Landing Pages</div>
-                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Criamos páginas pensadas para transformar visitantes em clientes. Totalmente integradas com campanhas de marketing e optimizadas para conversão.</div>
+                <div class="copy-label" style="color: var(--purple-light);">02 — Suporte</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Landing Pages & Websites de Conversão</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Páginas desenhadas para transformar o tráfego dos anúncios em contactos. Integradas diretamente com as campanhas e focadas em conversão.</div>
                 <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
+                    <li>Páginas alinhadas com cada campanha</li>
+                    <li>Integração com pixels e eventos de conversão</li>
                     <li>Taxas de conversão acima da média</li>
-                    <li>Páginas integradas com funis de aquisição</li>
-                    <li>Experiência optimizada para decisores B2B</li>
                 </ul>
             </div>
 
             <!-- Serviço 3 -->
-            <div class="copy-card" style="border-left: 3px solid var(--green);">
-                <div class="copy-label" style="color: var(--green);">03 — Estratégia</div>
-                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Estratégia & Gestão de Redes Sociais</div>
-                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Transformamos a presença digital da sua empresa numa ferramenta de crescimento. Estratégias alinhadas com os objectivos do negócio.</div>
+            <div class="copy-card" style="border-left: 3px solid var(--gold);">
+                <div class="copy-label" style="color: var(--gold);">03 — Suporte</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Conteúdo Estratégico para Anúncios</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Criativos e vídeos pensados para performar em Meta Ads e Google Ads. Produzidos com foco em conversão, não apenas visualizações.</div>
                 <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
-                    <li>Posicionamento claro no mercado</li>
-                    <li>Autoridade percebida pelo público-alvo</li>
-                    <li>Consistência na comunicação</li>
+                    <li>Criativos alinhados com a estratégia de aquisição</li>
+                    <li>Vídeos para todas as fases do funil</li>
+                    <li>Testes A/B de criativos</li>
                 </ul>
             </div>
 
             <!-- Serviço 4 -->
-            <div class="copy-card" style="border-left: 3px solid var(--gold);">
-                <div class="copy-label" style="color: var(--gold);">04 — Conteúdo</div>
-                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Conteúdo & Produção Multimédia</div>
-                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Criamos conteúdo que capta atenção, gera envolvimento e posiciona a sua marca. Vídeos de alto impacto pensados para aumentar conversão.</div>
+            <div class="copy-card" style="border-left: 3px solid var(--green);">
+                <div class="copy-label" style="color: var(--green);">04 — Suporte</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Branding & Posicionamento</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Construímos marcas reconhecíveis e consistentes, preparadas para crescer. Identidade visual e posicionamento que aumentam a perceção de valor.</div>
                 <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
-                    <li>Conteúdo alinhado com objectivos de negócio</li>
-                    <li>Vídeos optimizados para conversão</li>
-                    <li>Materiais para todo o funil de vendas</li>
+                    <li>Identidade coerente em todos os pontos de contacto</li>
+                    <li>Perceção de valor alinhada com o posicionamento</li>
+                    <li>Marca preparada para competir</li>
                 </ul>
             </div>
 
             <!-- Serviço 5 -->
             <div class="copy-card" style="border-left: 3px solid var(--purple-light);">
-                <div class="copy-label" style="color: var(--purple-light);">05 — Influência</div>
-                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Influencer Marketing & Parcerias</div>
-                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Ligamos a sua marca a influenciadores e figuras públicas para gerar impacto real. Campanhas alinhadas com os objectivos da marca.</div>
+                <div class="copy-label" style="color: var(--purple-light);">05 — Suporte</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Gestão de Redes Sociais</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Presença digital alinhada com os objetivos do negócio. Comunicação consistente que sustenta a marca enquanto as campanhas geram resultados.</div>
                 <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
-                    <li>Parcerias com influenciadores alinhados</li>
+                    <li>Posicionamento claro e consistente</li>
+                    <li>Conteúdo alinhado com a estratégia</li>
+                    <li>Comunicação que acompanha o crescimento</li>
+                </ul>
+            </div>
+
+            <!-- Serviço 6 -->
+            <div class="copy-card" style="border-left: 3px solid var(--gold);">
+                <div class="copy-label" style="color: var(--gold);">06 — Suporte</div>
+                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Influencer Marketing & Parcerias</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Ligamos a marca a influenciadores e parceiros estratégicos. Campanhas com gestão completa, desde a seleção à medição de resultados.</div>
+                <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
+                    <li>Parcerias com alinhamento ao público-alvo</li>
                     <li>Campanhas com métricas de performance</li>
                     <li>Gestão completa do processo</li>
                 </ul>
             </div>
 
-            <!-- Serviço 6 -->
-            <div class="copy-card" style="border-left: 3px solid var(--green);">
-                <div class="copy-label" style="color: var(--green);">06 — Marca</div>
-                <div class="copy-text" style="font-weight: 700; font-size: 16px;">Branding & Posicionamento</div>
-                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Construímos marcas que se destacam e são reconhecidas no mercado. Identidade visual e posicionamento que aumentam a perceção de valor.</div>
-                <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
-                    <li>Identidade que transmite profissionalismo</li>
-                    <li>Perceção de valor alinhada com posicionamento</li>
-                    <li>Marca memorável e diferenciada</li>
-                </ul>
-            </div>
-
         </div>
 
-        <div class="copy-card" style="margin-top: 24px; text-align: center; background: linear-gradient(135deg, rgba(86, 54, 209, 0.1), rgba(245, 158, 11, 0.05));">
-            <div class="copy-text" style="font-weight: 600;">Uma abordagem completa, com um único objectivo:</div>
-            <div class="copy-text headline" style="font-size: 20px; color: var(--gold); margin-top: 8px;">Gerar crescimento real e sustentável para o seu negócio.</div>
-        </div>
-
-        <div class="annotation joao-request">
-            <span class="annotation-icon">J</span>
-            <div class="annotation-title">Textos do documento original</div>
-            <div class="annotation-text">Estes serviços foram retirados exactamente do documento "Conteúdo Landing Page — PowerLogos (Serviços).dotx" enviado pelo João. Mantida a estrutura e linguagem original.</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">3</span>
+            <span class="feedback-badge">Feedback Ponto 3 — Reordenação + foco dominante</span>
+            <div class="annotation-title">Serviços reordenados — Google/Meta Ads domina</div>
+            <div class="annotation-text">O Serviço 1 (Google Ads & Meta Ads) agora ocupa toda a largura do grid com destaque cyan e label "FOCO PRINCIPAL". Os restantes serviços ficam rotulados como "Suporte" e aparecem numa grelha 2x2 abaixo. Ordem nova: 1) Ads, 2) Landing Pages (suporta ads), 3) Conteúdo (criativos para ads), 4) Branding, 5) Redes Sociais, 6) Influencer. A descrição do Serviço 1 também foi reescrita sem "ROI desde o primeiro mês" (Ponto 2).</div>
         </div>
     </section>
 
@@ -1012,38 +1052,84 @@
     <!-- ==================== PROVA SOCIAL ==================== -->
     <section class="section">
         <span class="section-label">Secção 06 + 07</span>
-        <h2 class="section-title">Prova Social</h2>
+        <h2 class="section-title">Prova Social <span class="version-tag">v1.2</span></h2>
 
-        <div class="annotation importante">
-            <span class="annotation-icon">i</span>
-            <div class="annotation-title">Prova social (vídeos + reviews)</div>
-            <div class="annotation-text">O João concordou com <strong>"Prova social (vídeos + reviews)"</strong>. Esta secção combina testemunhos em vídeo + avaliações Google + logos de clientes para máxima credibilidade.</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">5</span>
+            <span class="feedback-badge">Feedback Ponto 5 — Prova social reforçada (CRÍTICO)</span>
+            <div class="annotation-title">Bloco ampliado com métricas agregadas + placeholders explícitos</div>
+            <div class="annotation-text">O João pediu mais prova social: números reais, CPL, ROI, crescimento %. Como ainda não temos os dados reais, foram criados placeholders claros e identificáveis (em cyan tracejado) para o João preencher. Também adicionado um bloco de "métricas agregadas" antes dos testemunhos.</div>
+        </div>
+
+        <!-- NOVO: Bloco de Métricas Agregadas -->
+        <div class="copy-card" style="border-color: var(--cyan); background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(86, 54, 209, 0.05));">
+            <div class="copy-label" style="color: var(--cyan);">Bloco de Métricas Agregadas (v1.2 NOVO)</div>
+            <div class="copy-text" style="margin-bottom: 16px; font-weight: 600;">Resultados agregados nos últimos 12 meses:</div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                <div style="padding: 16px; background: var(--dark); border-radius: 8px; text-align: center;">
+                    <div style="color: var(--cyan); font-size: 11px; text-transform: uppercase; margin-bottom: 6px;">Leads Qualificados</div>
+                    <span class="placeholder-cliente">[INSERIR: +X leads gerados]</span>
+                </div>
+                <div style="padding: 16px; background: var(--dark); border-radius: 8px; text-align: center;">
+                    <div style="color: var(--cyan); font-size: 11px; text-transform: uppercase; margin-bottom: 6px;">CPL Médio Reduzido</div>
+                    <span class="placeholder-cliente">[INSERIR: de X€ para Y€]</span>
+                </div>
+                <div style="padding: 16px; background: var(--dark); border-radius: 8px; text-align: center;">
+                    <div style="color: var(--cyan); font-size: 11px; text-transform: uppercase; margin-bottom: 6px;">ROAS Médio Meta Ads</div>
+                    <span class="placeholder-cliente">[INSERIR: Xx]</span>
+                </div>
+                <div style="padding: 16px; background: var(--dark); border-radius: 8px; text-align: center;">
+                    <div style="color: var(--cyan); font-size: 11px; text-transform: uppercase; margin-bottom: 6px;">Taxa de Renovação 6m</div>
+                    <span class="placeholder-cliente">[INSERIR: X%]</span>
+                </div>
+            </div>
         </div>
 
         <div class="copy-card">
-            <div class="copy-label">Testemunhos em Vídeo</div>
+            <div class="copy-label">Testemunho em Vídeo 1</div>
             <div class="copy-text">
                 <strong>[VÍDEO 1]</strong><br>
-                "Passámos de zero presença online para um fluxo consistente de leads qualificados em menos de 60 dias."<br>
-                <span style="color: var(--green);">Resultado: +300% em leads qualificados</span>
+                <span class="placeholder-cliente">[INSERIR: verbatim real sobre resultados em Google/Meta Ads]</span><br>
+                <span class="placeholder-cliente">— [Nome], [Cargo, Empresa]</span><br>
+                <span style="color: var(--green);">Resultado: </span><span class="placeholder-cliente">[INSERIR: métrica concreta — ex. CPL de 45€ para 18€]</span>
+            </div>
+        </div>
+
+        <div class="copy-card">
+            <div class="copy-label">Testemunho em Vídeo 2</div>
+            <div class="copy-text">
+                <strong>[VÍDEO 2]</strong><br>
+                <span class="placeholder-cliente">[INSERIR: verbatim sobre experiência vs agências anteriores]</span><br>
+                <span class="placeholder-cliente">— [Nome], [Cargo, Empresa]</span><br>
+                <span style="color: var(--green);">Resultado: </span><span class="placeholder-cliente">[INSERIR: ex. ROAS de 4.2x em 90 dias]</span>
+            </div>
+        </div>
+
+        <div class="copy-card">
+            <div class="copy-label">Testemunho em Vídeo 3</div>
+            <div class="copy-text">
+                <strong>[VÍDEO 3]</strong><br>
+                <span class="placeholder-cliente">[INSERIR: verbatim sobre crescimento gerado]</span><br>
+                <span class="placeholder-cliente">— [Nome], [Cargo, Empresa]</span><br>
+                <span style="color: var(--green);">Resultado: </span><span class="placeholder-cliente">[INSERIR: ex. +180% leads qualificados/mês]</span>
             </div>
         </div>
 
         <div class="copy-card">
             <div class="copy-label">Avaliações Google</div>
             <div class="badges" style="margin-bottom: 16px;">
-                <span class="badge gold">Google ★★★★★ 4.9/5</span>
+                <span class="badge gold">Google ★★★★★ 4.9/5 <span class="placeholder-cliente">[CONFIRMAR: XX avaliações]</span></span>
             </div>
             <div class="copy-text" style="font-size: 14px; font-style: italic;">
-                "O investimento compensa. Não é a opção mais barata, mas é a que funciona. Em 6 meses recuperámos o investimento e agora temos um sistema que continua a gerar clientes."<br>
-                <span style="color: var(--gray);">— Ana C., há 2 meses</span>
+                <span class="placeholder-cliente">[INSERIR: verbatim real de review Google #1]</span><br>
+                <span style="color: var(--gray);">— <span class="placeholder-cliente">[Nome], há X tempo]</span></span>
             </div>
         </div>
 
         <div class="copy-card">
             <div class="copy-label">Logos de Clientes</div>
             <div class="copy-text" style="color: var(--gray);">
-                [Inserir logos de clientes reais — solicitar ao João]<br>
+                <span class="placeholder-cliente">[INSERIR: logos de clientes reais — solicitar ao João]</span><br>
                 "Empresas que já confiam na PowerLogos"
             </div>
         </div>
@@ -1056,16 +1142,17 @@
         <span class="section-label">Secção 08</span>
         <h2 class="section-title">Equipa</h2>
 
-        <div class="copy-card">
-            <div class="copy-label">Título</div>
+        <div class="copy-card" style="border-color: var(--cyan);">
+            <div class="copy-label" style="color: var(--cyan);">Título (v1.2 — subtítulo reformulado)</div>
             <div class="copy-text headline">Conheça quem vai trabalhar consigo</div>
-            <div class="copy-text" style="color: var(--gray); margin-top: 8px;">Não trabalhamos com estagiários. A sua conta é gerida por especialistas com experiência comprovada.</div>
+            <div class="copy-text" style="color: var(--white); margin-top: 8px;">A sua conta é gerida por profissionais seniores, com experiência comprovada no mercado português e internacional.</div>
         </div>
 
-        <div class="annotation importante">
-            <span class="annotation-icon">i</span>
-            <div class="annotation-title">Humanização premium</div>
-            <div class="annotation-text">"Não trabalhamos com estagiários" reforça o posicionamento premium. O cliente sabe que vai ter especialistas seniores, não juniores a aprender.</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">1</span>
+            <span class="feedback-badge">Feedback Ponto 1 + 7 — Confronto removido</span>
+            <div class="annotation-title">"Não trabalhamos com estagiários" reformulado</div>
+            <div class="annotation-text">A frase "Não trabalhamos com estagiários" foi substituída por "A sua conta é gerida por profissionais seniores, com experiência comprovada no mercado português e internacional." Mantém a autoridade (profissionais seniores = não juniores) sem o confronto. Projeta experiência e internacionalização.</div>
         </div>
 
         <div class="team-grid">
@@ -1123,10 +1210,17 @@
                 <div class="copy-text" style="color: var(--gray); font-size: 14px;">Não acreditamos em reter clientes por contrato — retemos por resultados. Trabalhamos com compromissos mínimos de 3 meses para dar tempo à estratégia funcionar, mas a continuidade depende sempre dos resultados entregues.</div>
             </div>
 
-            <div class="copy-card" style="margin-bottom: 12px;">
-                <div class="copy-label" style="color: var(--gold);">Pergunta 3</div>
+            <div class="copy-card" style="margin-bottom: 12px; border-color: var(--cyan);">
+                <div class="copy-label" style="color: var(--cyan);">Pergunta 3 (v1.2 — timings removidos)</div>
                 <div class="copy-text" style="font-weight: 600; margin-bottom: 8px;">Em quanto tempo verei resultados?</div>
-                <div class="copy-text" style="color: var(--gray); font-size: 14px;">Depende do ponto de partida e dos canais utilizados. Em campanhas de tráfego pago, os primeiros leads surgem geralmente nas primeiras 2 semanas. A transformação completa — com sistema de aquisição consolidado — acontece tipicamente entre 3 a 6 meses.</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 14px;">Depende do ponto de partida, do setor e do orçamento de investimento. O nosso foco é implementar com rapidez, acompanhar de perto e otimizar continuamente. Na reunião estratégica apresentamos expectativas realistas para o seu caso específico.</div>
+            </div>
+
+            <div class="annotation feedback-v12">
+                <span class="annotation-icon">2</span>
+                <span class="feedback-badge">Feedback Ponto 2 — Timings removidos</span>
+                <div class="annotation-title">Resposta FAQ reformulada</div>
+                <div class="annotation-text">Removidos "primeiras 2 semanas" e "entre 3 a 6 meses". Substituídos por resposta honesta: depende do caso, foco em rapidez de implementação e acompanhamento. As expectativas são alinhadas na reunião estratégica com base no contexto real.</div>
             </div>
 
             <div class="copy-card" style="margin-bottom: 12px;">
@@ -1259,51 +1353,53 @@
         <span class="section-label">CTA Final</span>
         <h2 class="section-title">Fecho</h2>
 
-        <div class="copy-card" style="text-align: center; padding: 40px;">
+        <div class="copy-card" style="text-align: center; padding: 40px; border-color: var(--cyan);">
             <div class="copy-text headline" style="margin-bottom: 16px;">Pronto para transformar o marketing da sua empresa em resultados reais?</div>
-            <div class="copy-text" style="color: var(--gray); margin-bottom: 24px;">Agende uma reunião estratégica connosco. Sem compromisso, sem pressão — apenas uma conversa honesta sobre o potencial de crescimento do seu negócio.</div>
+            <div class="copy-text" style="color: var(--gray); margin-bottom: 24px;">Agende uma reunião estratégica connosco. Sem compromisso — apenas uma conversa honesta sobre o potencial de crescimento do seu negócio.</div>
             <a href="#" class="btn-primary">Agendar Reunião Estratégica →</a>
-            <div class="copy-text" style="color: var(--gold); font-size: 13px; margin-top: 16px;">Esta reunião é indicada para empresas com faturação superior a 15.000€/mês que procuram crescimento consistente através do digital.</div>
+            <div class="copy-text" style="color: var(--white); font-size: 13px; margin-top: 16px;">Trabalhamos com empresas que procuram crescer com estratégia e investimento consistente em marketing.</div>
         </div>
 
-        <div class="annotation joao-request">
-            <span class="annotation-icon">J</span>
-            <div class="annotation-title">Sem "gratuita" — conforme solicitado</div>
-            <div class="annotation-text">O CTA final diz "reunião estratégica connosco" em vez de "análise gratuita", conforme pedido do João. A nota de qualificação reforça o filtro de faturação mínima.</div>
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">4</span>
+            <span class="feedback-badge">Feedback Ponto 4 — Filtro suavizado</span>
+            <div class="annotation-title">Menção de 15.000€/mês removida do CTA Final</div>
+            <div class="annotation-text">A nota de qualificação do CTA Final foi suavizada — igual ao Hero. A mensagem mantém o posicionamento premium sem afastar leads qualificados no fecho da página. Qualificação rigorosa continua nos dropdowns do formulário (faturação + orçamento).</div>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- ==================== RESUMO SOLICITAÇÕES ==================== -->
+    <!-- ==================== RESUMO FEEDBACK v1.2 ==================== -->
     <section class="section">
-        <span class="section-label">Checklist</span>
-        <h2 class="section-title">Resumo: Solicitações do João Atendidas</h2>
+        <span class="section-label">Checklist v1.2</span>
+        <h2 class="section-title" style="color: var(--cyan);">Feedback do Cliente — 7 Pontos Aplicados</h2>
 
-        <div class="copy-card" style="background: rgba(16, 185, 129, 0.1); border-color: var(--green);">
-            <ul class="benefits-list" style="color: var(--green);">
-                <li><strong>Posicionamento mais premium</strong> — "Empresas estabelecidas", linguagem de resultados, exclusividade</li>
-                <li><strong>Foco em empresas com estrutura, não iniciantes</strong> — Nota de faturação mínima 15.000€</li>
-                <li><strong>CTA: "reunião estratégica" (não "análise gratuita")</strong> — Alterado em todos os botões</li>
-                <li><strong>Filtros no formulário</strong> — Faturação, orçamento, setor de atividade</li>
-                <li><strong>Linguagem que afaste clientes de baixo investimento</strong> — Nota de qualificação, linguagem premium</li>
-                <li><strong>Comunicação orientada a ROI e aquisição</strong> — Foco constante em resultados de negócio</li>
-                <li><strong>Menos foco em redes sociais, mais performance</strong> — "Não apenas likes e seguidores"</li>
-                <li><strong>Hero com autoridade</strong> — Foto expert + badges de resultados</li>
-                <li><strong>Prova social (vídeos + reviews)</strong> — Secções 06 + 07 completas</li>
-                <li><strong>Secção da "agência barata"</strong> — Secção 02 com timeline de dor</li>
-                <li><strong>Serviços completos</strong> — Secção 04 com os 6 serviços do documento original</li>
-                <li><strong>Metodologia</strong> — Secção 05 com 4 passos claros</li>
-                <li><strong>FAQ</strong> — Secção 09 com 7 perguntas que respondem objeções</li>
+        <div class="copy-card" style="background: rgba(6, 182, 212, 0.08); border-color: var(--cyan);">
+            <ul class="benefits-list" style="color: var(--white);">
+                <li><strong style="color: var(--cyan);">Ponto 1 — Tom ajustado (menos agressivo, mais premium):</strong> Variações A e B removidas (Hero). "Não trabalhamos com estagiários" reformulado (Secção 08).</li>
+                <li><strong style="color: var(--cyan);">Ponto 2 — Timings removidos:</strong> Bloco de comparação (Secção 02), Pain Timeline, Solução e FAQ sobre "em quanto tempo verei resultados" reescritos sem promessas de tempo.</li>
+                <li><strong style="color: var(--cyan);">Ponto 3 — Foco em Google Ads + Meta Ads (CRÍTICO):</strong> Hero reescrito com "anúncios" no subtítulo. Solução declara "agência de performance". Serviços reordenados — Ads domina com bloco full-width.</li>
+                <li><strong style="color: var(--cyan);">Ponto 4 — Filtro suavizado:</strong> Menção "15.000€/mês" removida do Hero e CTA Final. Qualificação rigorosa mantida apenas nos dropdowns do formulário.</li>
+                <li><strong style="color: var(--cyan);">Ponto 5 — Prova social reforçada (CRÍTICO):</strong> Adicionado Bloco de Métricas Agregadas (leads, CPL, ROAS, renovação). Testemunhos e reviews com placeholders cyan explícitos para o João preencher.</li>
+                <li><strong style="color: var(--cyan);">Ponto 6 — Copy simplificada:</strong> Parágrafos encurtados em Solução, Serviços e Metodologia. Frases mais diretas e curtas.</li>
+                <li><strong style="color: var(--cyan);">Ponto 7 — Ajustes técnicos:</strong> Palavra "anúncios" no subtítulo. Título Secção 02 neutralizado ("O padrão que trava o crescimento"). Google/Meta Partner e +700 empresas antecipados no Hero. Equipa sem confronto.</li>
             </ul>
+        </div>
+
+        <div class="annotation feedback-v12">
+            <span class="annotation-icon">i</span>
+            <span class="feedback-badge">Próximos passos</span>
+            <div class="annotation-title">Pendente: dados reais do cliente</div>
+            <div class="annotation-text">A copy v1.2 está pronta para aprovação do João. Os placeholders cyan (métricas agregadas, testemunhos, reviews, logos) aguardam envio dos dados reais do cliente para substituição antes do lançamento da LP.</div>
         </div>
     </section>
 
 </div>
 
 <footer style="text-align: center; padding: 40px 24px; color: var(--gray); font-size: 13px; border-top: 1px solid rgba(255,255,255,0.06);">
-    <p>Copy Premium v1.1 — PowerLogos — Preview com Anotações</p>
-    <p style="margin-top: 8px;">Desenvolvido por Elton Miranda — 02/04/2026</p>
+    <p>Copy Premium <span class="version-tag">v1.2</span> — PowerLogos — Preview com Feedback Aplicado</p>
+    <p style="margin-top: 8px;">Atualizado por Clara (Copywriter — time Elton Miranda) — 09/04/2026</p>
 </footer>
 
 </body>
