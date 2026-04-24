@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerLogos — Copy Premium v1.3 (Preview com Anotações + Feedback Ronda Final)</title>
+    <title>PowerLogos — Copy Premium v1.4 (Preview com Polimento PT-PT Final)</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,6 +14,7 @@
             --green: #10b981;
             --red: #ef4444;
             --cyan: #06b6d4;
+            --orange: #f97316;
             --dark: #0f0f1a;
             --dark-card: #1a1a2e;
             --gray: #64748b;
@@ -169,6 +170,48 @@
         }
 
         .legend-dot.feedback-v13 { background: var(--red); }
+
+        /* Annotation v1.4 — Polimento PT-PT */
+        .annotation.feedback-v14 {
+            background: rgba(249, 115, 22, 0.10);
+            border-left-color: var(--orange);
+            border: 1px solid rgba(249, 115, 22, 0.40);
+            border-left-width: 3px;
+        }
+        .annotation.feedback-v14 .annotation-icon {
+            background: var(--orange);
+            color: var(--white);
+            font-weight: 700;
+        }
+        .feedback-badge-v14 {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .version-tag-v14 {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+        .highlight-orange {
+            background: linear-gradient(120deg, rgba(249, 115, 22, 0.30) 0%, rgba(249, 115, 22, 0.10) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border-bottom: 2px solid var(--orange);
+        }
+        .legend-dot.feedback-v14 { background: var(--orange); }
 
         /* Container Principal */
         .container {
@@ -684,8 +727,8 @@
 
 <!-- Header de Contexto -->
 <header class="context-header">
-    <h1>PowerLogos — Copy Premium <span class="version-tag-v13">v1.3</span></h1>
-    <p>Preview com anotações estratégicas + feedback do cliente aplicado (09/04/2026 + nova ronda final 14/04/2026)</p>
+    <h1>PowerLogos — Copy Premium <span class="version-tag-v14">v1.4</span></h1>
+    <p>Preview com camadas evolutivas + última ronda PT-PT premium aplicada (23/04/2026)</p>
 
     <div class="legend">
         <div class="legend-item">
@@ -707,6 +750,10 @@
         <div class="legend-item">
             <span class="legend-dot" style="background: var(--red);"></span>
             <span>Feedback Cliente Aplicado (v1.3)</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot feedback-v14"></span>
+            <span>Polimento PT-PT Premium (v1.4)</span>
         </div>
     </div>
 </header>
@@ -854,10 +901,10 @@
                 <h4 style="color: var(--red);">Contrata pelo preço</h4>
                 <p>Opção barata, parece um bom negócio para começar.</p>
             </div>
-            <div class="pain-step">
+            <div class="pain-step" style="border-color: var(--orange);">
                 <div class="pain-step-number">2</div>
                 <h4 style="color: var(--red);">Anúncios sem retorno</h4>
-                <p>O investimento sai, os contactos não entram.</p>
+                <p>O investimento sai, os contactos não entram. <span class="highlight-orange">Os contactos que chegam não fecham.</span></p>
             </div>
             <div class="pain-step">
                 <div class="pain-step-number">3</div>
@@ -893,7 +940,7 @@
                 <div class="comparison-label">✓ PowerLogos</div>
                 <p style="font-size: 14px;">
                     Diagnóstico estratégico antes de tudo<br>
-                    Foco em aquisição de clientes e ROI<br>
+                    Foco em aquisição de clientes e <span class="highlight-orange">retorno</span><br>
                     Gestor dedicado e acompanhamento<br>
                     Relatórios com métricas de negócio<br>
                     <strong style="color: var(--green); font-size: 16px; margin-top: 12px; display: block;">Marketing ao serviço do crescimento</strong>
@@ -908,9 +955,9 @@
             <div class="annotation-text">Removidos "Semana 2: Primeiros leads", "Mês 3: ROI positivo", "Mês 6: Sistema escalável" e "Resultados desde a primeira semana". Substituídos por descrições qualitativas do método. A Pain Timeline também foi reescrita sem promessas de tempo.</div>
         </div>
 
-        <div class="copy-card">
-            <div class="copy-label">Frase de Transição</div>
-            <div class="copy-text">Na PowerLogos, trabalhamos com método — porque o capital e o tempo da sua empresa merecem rigor.</div>
+        <div class="copy-card" style="border-color: var(--orange);">
+            <div class="copy-label" style="color: var(--orange);">Frase de Transição (v1.4 — reduzida)</div>
+            <div class="copy-text"><span class="highlight-orange">Na PowerLogos, trabalhamos com método. O seu investimento e o seu tempo merecem rigor.</span></div>
         </div>
     </section>
 
@@ -1035,9 +1082,9 @@
 
             <!-- Serviço 3 -->
             <div class="copy-card" style="border-left: 3px solid var(--red);">
-                <div class="copy-label" style="color: var(--red);">03 — Suporte (v1.3)</div>
+                <div class="copy-label" style="color: var(--orange);">03 — Suporte (v1.4)</div>
                 <div class="copy-text" style="font-weight: 700; font-size: 16px;">Conteúdo Estratégico para Anúncios</div>
-                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Criativos e vídeos pensados para performar nos anúncios. Produzidos com foco em conversão, não apenas em visualizações.</div>
+                <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Criativos e vídeos pensados para <span class="highlight-orange">gerar resultados nos anúncios</span>. Produzidos com foco em conversão, não apenas em visualizações.</div>
                 <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
                     <li>Criativos alinhados com a estratégia de aquisição</li>
                     <li>Vídeos para todas as fases do funil</li>
@@ -1071,12 +1118,12 @@
 
             <!-- Serviço 6 -->
             <div class="copy-card" style="border-left: 3px solid var(--red);">
-                <div class="copy-label" style="color: var(--red);">06 — Suporte (v1.3)</div>
+                <div class="copy-label" style="color: var(--orange);">06 — Suporte (v1.4)</div>
                 <div class="copy-text" style="font-weight: 700; font-size: 16px;">Influenciadores & Parcerias Estratégicas</div>
                 <div class="copy-text" style="color: var(--gray); font-size: 13px; margin-top: 8px;">Ligamos a marca a influenciadores e parceiros estratégicos. Campanhas com gestão completa, desde a seleção à medição de resultados.</div>
                 <ul class="benefits-list" style="margin-top: 12px; font-size: 12px;">
                     <li>Parcerias com alinhamento ao público-alvo</li>
-                    <li>Campanhas com métricas de performance</li>
+                    <li>Campanhas com métricas de <span class="highlight-orange">desempenho</span></li>
                     <li>Gestão completa do processo</li>
                 </ul>
             </div>
@@ -1213,7 +1260,7 @@
                 <strong>[VÍDEO 2]</strong><br>
                 <span class="placeholder-cliente">[INSERIR: verbatim sobre experiência vs agências anteriores]</span><br>
                 <span class="placeholder-cliente">— [Nome], [Cargo, Empresa]</span><br>
-                <span style="color: var(--green);">Resultado: </span><span class="placeholder-cliente">[INSERIR: ex. ROAS de 4.2x em 90 dias]</span>
+                <span style="color: var(--green);">Resultado: </span><span class="placeholder-cliente">[INSERIR: ex. ROAS de <span class="highlight-orange">4,2x</span> em 90 dias]</span>
             </div>
         </div>
 
@@ -1268,10 +1315,10 @@
         </div>
 
         <div class="team-grid">
-            <div class="team-member">
+            <div class="team-member" style="border-color: var(--orange); box-shadow: 0 0 14px rgba(249, 115, 22, 0.15);">
                 <div class="team-avatar">JL</div>
                 <h4>João D. Luzia</h4>
-                <p>CEO & Estratega</p>
+                <p><span class="highlight-orange">CEO & Founder</span></p>
             </div>
             <div class="team-member">
                 <div class="team-avatar">RG</div>
@@ -1474,7 +1521,7 @@
 
         <div class="copy-card" style="text-align: center; padding: 40px; border-color: var(--cyan);">
             <div class="copy-text headline" style="margin-bottom: 16px;">Pronto para transformar o marketing da sua empresa em resultados reais?</div>
-            <div class="copy-text" style="color: var(--gray); margin-bottom: 24px;">Agende uma reunião estratégica connosco. Sem compromisso — apenas uma conversa honesta sobre o potencial de crescimento do seu negócio.</div>
+            <div class="copy-text" style="color: var(--gray); margin-bottom: 24px;">Agende uma reunião estratégica connosco. Sem compromisso — <span class="highlight-orange">uma conversa honesta sobre o potencial de crescimento do seu negócio.</span></div>
             <a href="#" class="btn-primary">Agendar Reunião Estratégica →</a>
             <div class="copy-text" style="color: var(--white); font-size: 13px; margin-top: 16px;">Trabalhamos com empresas que procuram crescer com estratégia e investimento consistente em marketing.</div>
         </div>
@@ -1546,11 +1593,46 @@
         </div>
     </section>
 
+    <div class="divider"></div>
+
+    <!-- ==================== RESUMO FEEDBACK v1.4 ==================== -->
+    <section class="section">
+        <span class="section-label">Checklist v1.4</span>
+        <h2 class="section-title" style="color: var(--orange);">Polimento PT-PT Premium — 8 Mudanças Cirúrgicas</h2>
+
+        <div class="copy-card" style="background: rgba(249, 115, 22, 0.08); border-color: var(--orange);">
+            <ul class="benefits-list" style="color: var(--white);">
+                <li><strong style="color: var(--orange);">Mudança 1 — Serviço 3 (Conteúdo):</strong> "performar nos anúncios" → "gerar resultados nos anúncios" (PT-PT mais natural).</li>
+                <li><strong style="color: var(--orange);">Mudança 2 — Serviço 6 (Influenciadores):</strong> "métricas de performance" → "métricas de desempenho" (PT-PT).</li>
+                <li><strong style="color: var(--orange);">Mudança 3 — Equipa João:</strong> "CEO & Estratega" → "CEO & Founder" (solicitação literal do cliente).</li>
+                <li><strong style="color: var(--orange);">Mudança 4 — Timeline Passo 2:</strong> "leads que chegam não fecham" → "contactos que chegam não fecham" (consistência com Secção 02).</li>
+                <li><strong style="color: var(--orange);">Mudança 5 — Comparação PowerLogos:</strong> "Foco em aquisição de clientes e ROI" → "Foco em aquisição de clientes e retorno" (reduz repetição de ROI).</li>
+                <li><strong style="color: var(--orange);">Mudança 6 — Testemunho 2 placeholder:</strong> "ROAS de 4.2x" → "ROAS de 4,2x" (vírgula decimal PT-PT).</li>
+                <li><strong style="color: var(--orange);">Mudança 7 — Frase de Transição (Secção 02):</strong> Reduzida e mais elegante. "trabalhamos com método — porque o capital e o tempo da sua empresa merecem rigor" → "trabalhamos com método. O seu investimento e o seu tempo merecem rigor".</li>
+                <li><strong style="color: var(--orange);">Mudança 8 — CTA Final subtítulo:</strong> Removido "apenas" supérfluo — frase mais limpa.</li>
+            </ul>
+        </div>
+
+        <div class="annotation feedback-v14">
+            <span class="annotation-icon">i</span>
+            <span class="feedback-badge-v14">v1.4 — Aprovação</span>
+            <div class="annotation-title">Última ronda aprovada pelo João Duarte Luzia (23/04/2026)</div>
+            <div class="annotation-text">Intervenção mínima — apenas ajustes cirúrgicos em palavras/construções que soavam pouco naturais em Portugal. Estrutura, posicionamento e tom geral mantidos (já aprovados na v1.3). Termos preservados (naturais em PT): leads, funis, Google Ads, Meta Ads, contactos qualificados, ROI pontual.</div>
+        </div>
+
+        <div class="annotation feedback-v14">
+            <span class="annotation-icon">V</span>
+            <span class="feedback-badge-v14">Varreduras executadas</span>
+            <div class="annotation-title">Verificações globais</div>
+            <div class="annotation-text">"4,9" verificado em todas as ocorrências (3 + 1 corrigida em placeholder). "performance/performar" eliminado do front-end. Anglicismos reavaliados: ROI mantido pontualmente, "Senior Consultant" preservado (cargo Deloitte), "Testes A/B" e "pixels" mantidos como padrão técnico. ROI: 3 ocorrências originais → 2 mantidas + 1 alternada para "retorno".</div>
+        </div>
+    </section>
+
 </div>
 
 <footer style="text-align: center; padding: 40px 24px; color: var(--gray); font-size: 13px; border-top: 1px solid rgba(255,255,255,0.06);">
-    <p>Copy Premium <span class="version-tag-v13">v1.3</span> — PowerLogos — Preview com Feedback da Ronda Final Aplicado</p>
-    <p style="margin-top: 8px;">Atualizado por Lucas (Web Designer — time Elton Miranda) — 14/04/2026</p>
+    <p>Copy Premium <span class="version-tag-v14">v1.4</span> — PowerLogos — Preview com Polimento PT-PT Premium Aplicado</p>
+    <p style="margin-top: 8px;">Atualizado por Lucas (Web Designer — time Elton Miranda) — 23/04/2026</p>
 </footer>
 
 </body>
